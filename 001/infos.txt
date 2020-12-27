@@ -1,0 +1,3 @@
+Nome: Guilherme Vieira
+Link: https://guilhermevieira.info
+Descrição: Divide a tela em 7 retângulos e os preenche de acordo com o valor em binário da contagem, 0 é prenchido de preto e 1 de branco.
