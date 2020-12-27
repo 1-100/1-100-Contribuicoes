@@ -1,0 +1,4 @@
+# Evitar que imagens subidas por engano para o repositorio
+.png
+.jpg
+.gif

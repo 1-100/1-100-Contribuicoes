@@ -1,0 +1,6 @@
+Orientações para enviar o arquivo.
+
+1. Coloque seu código na pasta "codigo"
+2. Coloque todas as 100 imagens geradas na pasta "imagens"
+3. Edite o conteúdo do arquivo "infos.txt" com as suas informações
+4. Crie um arquivo compactado desta pasta e envie para o e-mail 1-100@guilhermevieira.info
