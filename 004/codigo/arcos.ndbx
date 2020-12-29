@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ndbx formatVersion="21" type="file" uuid="8eea5894-fab6-457e-83df-cb57b0079f9c">
+    <property name="canvasHeight" value="500"/>
+    <property name="canvasWidth" value="500"/>
+    <property name="canvasX" value="0"/>
+    <property name="canvasY" value="0"/>
+    <node name="root" prototype="core.network" renderedChild="combine1">
+        <node name="arc1" position="3.00,8.00" prototype="corevector.arc"/>
+        <node name="arco_maior" position="16.00,6.00" prototype="corevector.arc"/>
+        <node name="colorize1" position="14.00,13.00" prototype="corevector.colorize">
+            <port name="fill" type="color" value="#ffffffff"/>
+        </node>
+        <node name="combine1" position="14.00,14.00" prototype="list.combine"/>
+        <node name="compound1" position="18.00,8.00" prototype="corevector.compound">
+            <port name="function" type="string" value="subtracted"/>
+        </node>
+        <node name="corte_arcomenor" position="20.00,6.00" prototype="corevector.ellipse"/>
+        <node name="divide1" position="7.00,1.00" prototype="math.divide">
+            <port name="value1" type="float" value="360.0"/>
+            <port name="value2" type="float" value="100.0"/>
+        </node>
+        <node name="divide2" position="19.00,2.00" prototype="math.divide">
+            <port name="value1" type="float" value="360.0"/>
+            <port name="value2" type="float" value="10.0"/>
+        </node>
+        <node name="frame1" position="19.00,9.00" prototype="core.frame"/>
+        <node name="range1" position="7.00,3.00" prototype="math.range">
+            <port name="end" type="float" value="360.0"/>
+            <port name="step" type="float" value="360.0"/>
+        </node>
+        <node name="range2" position="17.00,4.00" prototype="math.range">
+            <port name="end" type="float" value="360.0"/>
+            <port name="step" type="float" value="360.0"/>
+        </node>
+        <node name="rect1" position="14.00,12.00" prototype="corevector.rect">
+            <port name="width" type="float" value="500.0"/>
+            <port name="height" type="float" value="500.0"/>
+        </node>
+        <node name="sample1" position="2.00,1.00" prototype="math.sample">
+            <port name="amount" type="int" value="100"/>
+            <port name="start" type="float" value="20.0"/>
+            <port name="end" type="float" value="483.0"/>
+        </node>
+        <node name="sample2" position="16.00,1.00" prototype="math.sample">
+            <port name="amount" type="int" value="100"/>
+            <port name="start" type="float" value="20.0"/>
+            <port name="end" type="float" value="490.0"/>
+        </node>
+        <node name="sample3" position="20.00,4.00" prototype="math.sample">
+            <port name="amount" type="int" value="100"/>
+            <port name="end" type="float" value="470.0"/>
+        </node>
+        <node name="slice1" position="3.00,9.00" prototype="list.slice">
+            <port name="start_index" type="int" value="100"/>
+            <port name="size" type="int" value="1"/>
+        </node>
+        <node name="slice2" position="18.00,10.00" prototype="list.slice">
+            <port name="size" type="int" value="1"/>
+        </node>
+        <conn input="arc1.degrees" output="divide1"/>
+        <conn input="arc1.width" output="sample1"/>
+        <conn input="arc1.height" output="sample1"/>
+        <conn input="range1.step" output="divide1"/>
+        <conn input="arc1.start_angle" output="range1"/>
+        <conn input="slice1.list" output="arc1"/>
+        <conn input="range2.step" output="divide2"/>
+        <conn input="arco_maior.degrees" output="divide2"/>
+        <conn input="arco_maior.width" output="sample2"/>
+        <conn input="arco_maior.height" output="sample2"/>
+        <conn input="arco_maior.start_angle" output="range2"/>
+        <conn input="compound1.shape1" output="arco_maior"/>
+        <conn input="slice2.list" output="compound1"/>
+        <conn input="slice2.size" output="frame1"/>
+        <conn input="colorize1.shape" output="rect1"/>
+        <conn input="combine1.list1" output="colorize1"/>
+        <conn input="corte_arcomenor.width" output="sample3"/>
+        <conn input="corte_arcomenor.height" output="sample3"/>
+        <conn input="compound1.shape2" output="corte_arcomenor"/>
+        <conn input="combine1.list2" output="slice2"/>
+    </node>
+</ndbx>
