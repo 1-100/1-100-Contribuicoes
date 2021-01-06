@@ -1,3 +1,4 @@
 Nome: Seu Nome
 Link: www.seulink.com
 Descrição: Uma descrição do seu código em até 300 caracteres.
+Plataforma: O que utilizou para fazer a proposta (Processing, NodeBox 3, DrawBot, p5.js, etc)

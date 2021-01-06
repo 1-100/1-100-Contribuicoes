@@ -1,3 +1,4 @@
 Nome: Guilherme Vieira
 Link: https://guilhermevieira.info
 Descrição: Para cada número da contagem cria um arco com mesmo ângulo de abertura e com raios proporcionais ao valor da contagem formando uma espiral.
+Plataforma: NodeBox 3

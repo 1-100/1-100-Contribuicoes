@@ -1,0 +1,4 @@
+Nome: Vitor Carvalho
+Link: https://vitorcarvalho.com
+Descrição: A cada ciclo, cria uma matriz com número equivalente de pontos, com coordenadas distribuídas aleatoriamente pelo plano; desenha um polígono sem intersecções utilizando a matriz.
+Plataforma: DrawBot

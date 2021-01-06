@@ -1,8 +1,5 @@
-Stack boxes haphazardly, ten at a time, into ten crates which are also stacked haphazardly.
-
-Empilha caixas ao acaso, dez de cada vez, em dez caixas que também são empilhados ao acaso.
-
-John Cartan
-NodeBox 3
-
-https://www.instagram.com/john.cartan/
+Nome: John Cartan
+Link: https://www.instagram.com/john.cartan/
+Descrição: Empilha caixas ao acaso, dez de cada vez, em dez caixas que também são empilhados ao acaso.
+Description: Stack boxes haphazardly, ten at a time, into ten crates which are also stacked haphazardly.
+Plataforma: NodeBox 3

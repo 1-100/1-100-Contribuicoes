@@ -1,3 +1,4 @@
 Nome: Guilherme Vieira
 Link: https://guilhermevieira.info
 Descrição: Divide a tela em retângulos de acordo com número da contagem. Os retângulos são preenchidos com uma escala de cinza iniciando com o branco e terminando com o preto.
+Plataforma: Processing
