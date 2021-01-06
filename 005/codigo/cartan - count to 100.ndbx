@@ -1,0 +1,793 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ndbx formatVersion="21" type="file" uuid="c2d1e774-88cb-4c97-9ebd-fcc484257f2b">
+    <property name="canvasHeight" value="500"/>
+    <property name="canvasWidth" value="500"/>
+    <property name="canvasX" value="0"/>
+    <property name="canvasY" value="0"/>
+    <node name="root" prototype="core.network" renderedChild="combine4">
+        <node name="colorize1" position="9.00,12.00" prototype="corevector.colorize">
+            <port name="fill" type="color" value="#4b4b4bff"/>
+        </node>
+        <node name="colorize2" position="6.00,12.00" prototype="corevector.colorize">
+            <port name="fill" type="color" value="#9d9d9dff"/>
+            <port name="strokeWidth" type="float" value="0.5"/>
+        </node>
+        <node name="colorize3" position="6.00,16.00" prototype="corevector.colorize">
+            <port name="fill" type="color" value="#ffffffff"/>
+        </node>
+        <node name="combine1" position="1.00,7.00" prototype="list.combine"/>
+        <node name="combine2" position="19.00,7.00" prototype="list.combine"/>
+        <node name="combine3" position="9.00,9.00" prototype="list.combine"/>
+        <node name="combine4" position="9.00,18.00" prototype="list.combine"/>
+        <node name="crate" position="9.00,16.00" prototype="core.network" renderedChild="rotate1">
+            <node name="big_boxes" position="-10.00,16.00" prototype="corevector.null"/>
+            <node name="centroid1" position="-8.00,21.00" prototype="corevector.centroid"/>
+            <node name="centroid2" position="-1.00,28.00" prototype="corevector.centroid"/>
+            <node name="combine1" position="-10.00,32.00" prototype="list.combine"/>
+            <node name="group1" position="-1.00,26.00" prototype="corevector.group"/>
+            <node name="little_boxes" position="-4.00,16.00" prototype="corevector.null"/>
+            <node name="ones_digit" position="-1.00,16.00" prototype="math.integer">
+                <port name="value" type="int" value="10"/>
+            </node>
+            <node name="rotate1" position="-7.00,30.00" prototype="corevector.rotate"/>
+            <node name="slice1" position="-1.00,25.00" prototype="list.slice"/>
+            <node name="slice2" position="-10.00,19.00" prototype="list.slice">
+                <port name="size" type="int" value="1"/>
+            </node>
+            <node comment="Returns precise tangent angle at any position (0 to 100) along a path" name="tangent" position="-4.00,28.00" prototype="core.network" renderedChild="precision">
+                <node name="T" position="13.00,6.00" prototype="math.number">
+                    <port name="value" type="float" value="1.0"/>
+                </node>
+                <node name="add1" position="16.00,9.00" prototype="math.add">
+                    <port name="value2" type="float" value="1.0"/>
+                </node>
+                <node name="angle3" position="7.00,17.00" prototype="math.angle"/>
+                <node name="angle4" position="19.00,17.00" prototype="math.angle"/>
+                <node name="angle5" position="25.00,17.00" prototype="math.angle"/>
+                <node name="angle6" position="13.00,17.00" prototype="math.angle"/>
+                <node name="angle7" position="31.00,17.00" prototype="math.angle"/>
+                <node name="combine1" position="1.00,21.00" prototype="list.combine"/>
+                <node name="compare1" position="1.00,15.00" prototype="math.compare">
+                    <port name="comparator" type="string" value="&gt;"/>
+                </node>
+                <node name="compare2" position="4.00,15.00" prototype="math.compare">
+                    <port name="value2" type="float" value="100.0"/>
+                    <port name="comparator" type="string" value="=="/>
+                </node>
+                <node name="compare3" position="-2.00,15.00" prototype="math.compare">
+                    <port name="comparator" type="string" value="=="/>
+                </node>
+                <node comment="separates path into distinct contours" name="contours" outputType="geometry" position="25.00,11.00" prototype="core.network" renderedChild="redraw">
+                    <node name="lookup4" outputRange="list" position="32.00,-7.00" prototype="data.lookup">
+                        <port name="key" type="string" value="contours"/>
+                    </node>
+                    <node name="null1" position="32.00,-8.00" prototype="corevector.null"/>
+                    <node name="redraw" position="32.00,-6.00" prototype="core.network" renderedChild="switch1">
+                        <node name="compare1" position="31.00,3.00" prototype="math.compare">
+                            <port name="comparator" type="string" value="=="/>
+                        </node>
+                        <node name="connect1" position="28.00,-1.00" prototype="corevector.connect">
+                            <port name="closed" type="boolean" value="false"/>
+                        </node>
+                        <node name="connect2" position="31.00,-1.00" prototype="corevector.connect"/>
+                        <node name="lookup1" position="34.00,1.00" prototype="data.lookup">
+                            <port name="key" type="string" value="length"/>
+                        </node>
+                        <node name="lookup2" position="31.00,1.00" prototype="data.lookup">
+                            <port name="key" type="string" value="length"/>
+                        </node>
+                        <node name="null2" position="34.00,-6.00" prototype="corevector.null"/>
+                        <node name="point1" position="28.00,-4.00" prototype="corevector.point"/>
+                        <node name="switch1" position="28.00,5.00" prototype="list.switch"/>
+                        <port childReference="null2.shape" description="The input shape." label="" name="contour" range="value" type="geometry" widget="none"/>
+                        <conn input="connect1.points" output="point1"/>
+                        <conn input="point1.value" output="null2"/>
+                        <conn input="lookup1.list" output="null2"/>
+                        <conn input="connect2.points" output="point1"/>
+                        <conn input="switch1.index" output="compare1"/>
+                        <conn input="switch1.input1" output="connect1"/>
+                        <conn input="switch1.input2" output="connect2"/>
+                        <conn input="compare1.value1" output="lookup2"/>
+                        <conn input="compare1.value2" output="lookup1"/>
+                        <conn input="lookup2.list" output="connect2"/>
+                    </node>
+                    <port childReference="null1.shape" description="The input shape." label="" name="shape" range="value" type="geometry" widget="none"/>
+                    <conn input="lookup4.list" output="null1"/>
+                    <conn input="redraw.contour" output="lookup4"/>
+                </node>
+                <node name="divide1" position="20.00,6.00" prototype="math.divide">
+                    <port name="value1" type="float" value="1.0"/>
+                    <port name="value2" type="float" value="1000.0"/>
+                </node>
+                <node name="first1" position="31.00,13.00" prototype="list.first"/>
+                <node comment="returns true if path is closed; paths with multiple contours treated as closed" name="is_closed" outputType="boolean" position="-5.00,15.00" prototype="core.network" renderedChild="logical1">
+                    <node name="compare1" position="11.00,27.00" prototype="math.compare">
+                        <port name="comparator" type="string" value="&gt;="/>
+                    </node>
+                    <node comment="multiple contours" name="compare2" position="17.00,27.00" prototype="math.compare">
+                        <port name="value2" type="float" value="1.0"/>
+                        <port name="comparator" type="string" value="&gt;"/>
+                    </node>
+                    <node name="connect3" position="14.00,24.00" prototype="corevector.connect"/>
+                    <node name="count2" position="17.00,25.00" prototype="list.count"/>
+                    <node name="logical1" position="11.00,29.00" prototype="math.logical"/>
+                    <node name="lookup2" position="14.00,25.00" prototype="data.lookup">
+                        <port name="key" type="string" value="length"/>
+                    </node>
+                    <node name="lookup3" position="11.00,25.00" prototype="data.lookup">
+                        <port name="key" type="string" value="length"/>
+                    </node>
+                    <node name="null1" position="11.00,20.00" prototype="corevector.null"/>
+                    <node name="point1" position="14.00,23.00" prototype="corevector.point"/>
+                    <node name="point3" position="17.00,24.00" prototype="corevector.point"/>
+                    <node name="resample1" position="17.00,23.00" prototype="corevector.resample">
+                        <port name="method" type="string" value="amount"/>
+                        <port name="points" type="int" value="1"/>
+                        <port name="per_contour" type="boolean" value="true"/>
+                    </node>
+                    <port childReference="null1.shape" description="The input shape." label="" name="shape" range="value" type="geometry" widget="none"/>
+                    <conn input="point1.value" output="null1"/>
+                    <conn input="connect3.points" output="point1"/>
+                    <conn input="lookup2.list" output="connect3"/>
+                    <conn input="lookup3.list" output="null1"/>
+                    <conn input="compare1.value1" output="lookup3"/>
+                    <conn input="compare1.value2" output="lookup2"/>
+                    <conn input="point3.value" output="resample1"/>
+                    <conn input="count2.list" output="point3"/>
+                    <conn input="resample1.shape" output="null1"/>
+                    <conn input="compare2.value1" output="count2"/>
+                    <conn input="logical1.boolean1" output="compare1"/>
+                    <conn input="logical1.boolean2" output="compare2"/>
+                </node>
+                <node name="last1" position="25.00,13.00" prototype="list.last"/>
+                <node name="last2" position="22.00,15.00" prototype="list.last"/>
+                <node name="logical1" position="-2.00,18.00" prototype="math.logical">
+                    <port name="comparator" type="string" value="and"/>
+                </node>
+                <node name="logical2" position="-5.00,18.00" prototype="math.logical">
+                    <port name="comparator" type="string" value="and"/>
+                </node>
+                <node name="multiply1" position="-5.00,19.00" prototype="math.multiply">
+                    <port name="value2" type="float" value="4.0"/>
+                </node>
+                <node name="number2" position="-2.00,19.00" prototype="math.number"/>
+                <node name="number3" position="1.00,19.00" prototype="math.number"/>
+                <node name="number4" position="4.00,19.00" prototype="math.number"/>
+                <node name="path" position="7.00,8.00" prototype="corevector.null"/>
+                <node name="point2" position="22.00,14.00" prototype="corevector.point"/>
+                <node name="point_on_path1" position="7.00,15.00" prototype="corevector.point_on_path"/>
+                <node name="point_on_path2" position="10.00,15.00" prototype="corevector.point_on_path">
+                    <port name="t" type="float" value="0.01"/>
+                </node>
+                <node name="point_on_path3" position="19.00,15.00" prototype="corevector.point_on_path">
+                    <port name="t" type="float" value="99.99"/>
+                </node>
+                <node name="point_on_path4" position="25.00,15.00" prototype="corevector.point_on_path">
+                    <port name="t" type="float" value="99.99"/>
+                </node>
+                <node name="point_on_path5" position="28.00,15.00" prototype="corevector.point_on_path">
+                    <port name="t" type="float" value="0.01"/>
+                </node>
+                <node name="point_on_path6" position="13.00,15.00" prototype="corevector.point_on_path"/>
+                <node name="point_on_path7" position="31.00,15.00" prototype="corevector.point_on_path">
+                    <port name="t" type="float" value="99.99"/>
+                </node>
+                <node name="point_on_path8" position="16.00,15.00" prototype="corevector.point_on_path">
+                    <port name="t" type="float" value="0.01"/>
+                </node>
+                <node name="point_on_path9" position="34.00,15.00" prototype="corevector.point_on_path">
+                    <port name="t" type="float" value="0.01"/>
+                </node>
+                <node comment="rounds a floating point number to a given precision" name="precision" position="7.00,25.00" prototype="core.network" renderedChild="switch2">
+                    <node name="compare1" position="-28.00,-4.00" prototype="math.compare">
+                        <port name="comparator" type="string" value="!="/>
+                    </node>
+                    <node name="compare2" position="-28.00,3.00" prototype="math.compare">
+                        <port name="value2" type="float" value="-0.0"/>
+                        <port name="comparator" type="string" value="=="/>
+                    </node>
+                    <node name="concatenate1" position="-31.00,-4.00" prototype="string.concatenate">
+                        <port name="string1" type="string" value="%."/>
+                        <port name="string3" type="string" value="f"/>
+                    </node>
+                    <node name="format_number1" position="-32.00,-2.00" prototype="string.format_number"/>
+                    <node name="number1" position="-31.00,3.00" prototype="math.number"/>
+                    <node name="number3" position="-32.00,-6.00" prototype="math.number">
+                        <port name="value" type="float" value="-0.0"/>
+                    </node>
+                    <node name="number4" position="-32.00,-1.00" prototype="math.number"/>
+                    <node name="precision" position="-29.00,-6.00" prototype="math.integer">
+                        <port name="value" type="int" value="4"/>
+                    </node>
+                    <node name="round1" position="-35.00,-1.00" prototype="math.round"/>
+                    <node name="switch1" position="-32.00,1.00" prototype="list.switch"/>
+                    <node comment="replace minus zeroes with zeroes" name="switch2" position="-32.00,5.00" prototype="list.switch"/>
+                    <port childReference="number3.value" description="" label="" name="value" range="value" type="float" value="-0.0" widget="float"/>
+                    <port childReference="precision.value" description="" label="" min="0.0" name="precision" range="value" type="int" value="4" widget="int"/>
+                    <conn input="format_number1.value" output="number3"/>
+                    <conn input="concatenate1.string2" output="precision"/>
+                    <conn input="format_number1.format" output="concatenate1"/>
+                    <conn input="number4.value" output="format_number1"/>
+                    <conn input="round1.value" output="number3"/>
+                    <conn input="compare1.value1" output="precision"/>
+                    <conn input="switch1.index" output="compare1"/>
+                    <conn input="switch1.input1" output="round1"/>
+                    <conn input="switch1.input2" output="number4"/>
+                    <conn input="compare2.value1" output="switch1"/>
+                    <conn input="switch2.input1" output="switch1"/>
+                    <conn input="switch2.index" output="compare2"/>
+                    <conn input="switch2.input2" output="number1"/>
+                </node>
+                <node name="subtract1" position="13.00,9.00" prototype="math.subtract">
+                    <port name="value2" type="float" value="1.0"/>
+                </node>
+                <node name="subtract2" position="19.00,9.00" prototype="math.subtract">
+                    <port name="value1" type="float" value="100.0"/>
+                </node>
+                <node name="sum1" position="1.00,22.00" prototype="math.sum"/>
+                <node name="switch1" position="7.00,24.00" prototype="list.switch"/>
+                <port childReference="path.shape" description="The input shape." label="" name="path" range="value" type="geometry" widget="none"/>
+                <port childReference="T.value" description="" label="" max="100.0" min="0.0" name="T" range="value" type="float" value="1.0" widget="float"/>
+                <conn input="is_closed.shape" output="path"/>
+                <conn input="angle3.point1" output="point_on_path1"/>
+                <conn input="angle3.point2" output="point_on_path2"/>
+                <conn input="angle4.point1" output="point_on_path3"/>
+                <conn input="last2.list" output="point2"/>
+                <conn input="angle4.point2" output="last2"/>
+                <conn input="angle6.point1" output="point_on_path6"/>
+                <conn input="point_on_path1.shape" output="path"/>
+                <conn input="point_on_path2.shape" output="path"/>
+                <conn input="point_on_path6.shape" output="path"/>
+                <conn input="point_on_path8.shape" output="path"/>
+                <conn input="point_on_path3.shape" output="path"/>
+                <conn input="point2.value" output="path"/>
+                <conn input="subtract1.value1" output="T"/>
+                <conn input="add1.value1" output="T"/>
+                <conn input="point_on_path6.t" output="subtract1"/>
+                <conn input="point_on_path8.t" output="add1"/>
+                <conn input="compare1.value1" output="T"/>
+                <conn input="compare2.value1" output="T"/>
+                <conn input="switch1.input3" output="angle4"/>
+                <conn input="angle6.point2" output="point_on_path8"/>
+                <conn input="switch1.input2" output="angle6"/>
+                <conn input="switch1.input1" output="angle3"/>
+                <conn input="angle5.point1" output="point_on_path4"/>
+                <conn input="angle5.point2" output="point_on_path5"/>
+                <conn input="switch1.input4" output="angle5"/>
+                <conn input="contours.shape" output="path"/>
+                <conn input="last1.list" output="contours"/>
+                <conn input="point_on_path4.shape" output="last1"/>
+                <conn input="point_on_path5.shape" output="last1"/>
+                <conn input="logical1.boolean1" output="is_closed"/>
+                <conn input="logical1.boolean2" output="compare2"/>
+                <conn input="angle7.point1" output="point_on_path7"/>
+                <conn input="angle7.point2" output="point_on_path9"/>
+                <conn input="first1.list" output="contours"/>
+                <conn input="point_on_path7.shape" output="first1"/>
+                <conn input="point_on_path9.shape" output="first1"/>
+                <conn input="compare3.value1" output="T"/>
+                <conn input="logical2.boolean1" output="is_closed"/>
+                <conn input="logical2.boolean2" output="compare3"/>
+                <conn input="multiply1.value1" output="logical2"/>
+                <conn input="sum1.values" output="combine1"/>
+                <conn input="combine1.list1" output="multiply1"/>
+                <conn input="number2.value" output="logical1"/>
+                <conn input="combine1.list2" output="number2"/>
+                <conn input="switch1.index" output="sum1"/>
+                <conn input="number3.value" output="compare1"/>
+                <conn input="combine1.list3" output="number3"/>
+                <conn input="number4.value" output="compare2"/>
+                <conn input="combine1.list4" output="number4"/>
+                <conn input="switch1.input5" output="angle7"/>
+                <conn input="precision.value" output="switch1"/>
+                <conn input="add1.value2" output="divide1"/>
+                <conn input="subtract1.value2" output="divide1"/>
+                <conn input="point_on_path2.t" output="divide1"/>
+                <conn input="point_on_path9.t" output="divide1"/>
+                <conn input="subtract2.value2" output="divide1"/>
+                <conn input="point_on_path7.t" output="subtract2"/>
+                <conn input="point_on_path4.t" output="subtract2"/>
+                <conn input="point_on_path5.t" output="divide1"/>
+                <conn input="point_on_path3.t" output="subtract2"/>
+            </node>
+            <node name="tens_digit" position="-7.00,16.00" prototype="math.integer"/>
+            <node name="translate9" position="-4.00,23.00" prototype="corevector.translate"/>
+            <port childReference="big_boxes.shape" description="The input shape." label="" name="big boxes" range="list" type="geometry" widget="none"/>
+            <port childReference="little_boxes.shape" description="The input shape." label="" name="little boxes" range="list" type="geometry" widget="none"/>
+            <port childReference="tens_digit.value" description="" label="" name="tens digit" range="value" type="int" value="0" widget="int"/>
+            <port childReference="ones_digit.value" description="" label="" max="10.0" min="0.0" name="ones digit" range="value" type="int" value="10" widget="int"/>
+            <conn input="centroid1.shape" output="slice2"/>
+            <conn input="translate9.translate" output="centroid1"/>
+            <conn input="slice2.list" output="big_boxes"/>
+            <conn input="slice2.start_index" output="tens_digit"/>
+            <conn input="translate9.shape" output="little_boxes"/>
+            <conn input="slice1.list" output="translate9"/>
+            <conn input="slice1.size" output="ones_digit"/>
+            <conn input="combine1.list1" output="slice2"/>
+            <conn input="group1.shapes" output="slice1"/>
+            <conn input="tangent.path" output="slice2"/>
+            <conn input="rotate1.shape" output="group1"/>
+            <conn input="rotate1.angle" output="tangent"/>
+            <conn input="rotate1.origin" output="centroid2"/>
+            <conn input="combine1.list7" output="rotate1"/>
+            <conn input="centroid2.shape" output="slice2"/>
+        </node>
+        <node name="crate_full" position="12.00,16.00" prototype="core.network" renderedChild="combine1">
+            <node name="big_boxes" position="-10.00,16.00" prototype="corevector.null"/>
+            <node name="centroid1" position="-8.00,21.00" prototype="corevector.centroid"/>
+            <node name="centroid2" position="-1.00,28.00" prototype="corevector.centroid"/>
+            <node name="combine1" position="-10.00,32.00" prototype="list.combine"/>
+            <node name="group1" position="-1.00,26.00" prototype="corevector.group"/>
+            <node name="little_boxes" position="-4.00,16.00" prototype="corevector.null"/>
+            <node name="ones_digit" position="-1.00,16.00" prototype="math.integer">
+                <port name="value" type="int" value="10"/>
+            </node>
+            <node name="rotate1" position="-7.00,30.00" prototype="corevector.rotate"/>
+            <node name="slice1" position="-1.00,25.00" prototype="list.slice"/>
+            <node name="slice2" position="-10.00,19.00" prototype="list.slice">
+                <port name="size" type="int" value="1"/>
+            </node>
+            <node comment="Returns precise tangent angle at any position (0 to 100) along a path" name="tangent" position="-4.00,28.00" prototype="core.network" renderedChild="precision">
+                <node name="T" position="13.00,6.00" prototype="math.number">
+                    <port name="value" type="float" value="1.0"/>
+                </node>
+                <node name="add1" position="16.00,9.00" prototype="math.add">
+                    <port name="value2" type="float" value="1.0"/>
+                </node>
+                <node name="angle3" position="7.00,17.00" prototype="math.angle"/>
+                <node name="angle4" position="19.00,17.00" prototype="math.angle"/>
+                <node name="angle5" position="25.00,17.00" prototype="math.angle"/>
+                <node name="angle6" position="13.00,17.00" prototype="math.angle"/>
+                <node name="angle7" position="31.00,17.00" prototype="math.angle"/>
+                <node name="combine1" position="1.00,21.00" prototype="list.combine"/>
+                <node name="compare1" position="1.00,15.00" prototype="math.compare">
+                    <port name="comparator" type="string" value="&gt;"/>
+                </node>
+                <node name="compare2" position="4.00,15.00" prototype="math.compare">
+                    <port name="value2" type="float" value="100.0"/>
+                    <port name="comparator" type="string" value="=="/>
+                </node>
+                <node name="compare3" position="-2.00,15.00" prototype="math.compare">
+                    <port name="comparator" type="string" value="=="/>
+                </node>
+                <node comment="separates path into distinct contours" name="contours" outputType="geometry" position="25.00,11.00" prototype="core.network" renderedChild="redraw">
+                    <node name="lookup4" outputRange="list" position="32.00,-7.00" prototype="data.lookup">
+                        <port name="key" type="string" value="contours"/>
+                    </node>
+                    <node name="null1" position="32.00,-8.00" prototype="corevector.null"/>
+                    <node name="redraw" position="32.00,-6.00" prototype="core.network" renderedChild="switch1">
+                        <node name="compare1" position="31.00,3.00" prototype="math.compare">
+                            <port name="comparator" type="string" value="=="/>
+                        </node>
+                        <node name="connect1" position="28.00,-1.00" prototype="corevector.connect">
+                            <port name="closed" type="boolean" value="false"/>
+                        </node>
+                        <node name="connect2" position="31.00,-1.00" prototype="corevector.connect"/>
+                        <node name="lookup1" position="34.00,1.00" prototype="data.lookup">
+                            <port name="key" type="string" value="length"/>
+                        </node>
+                        <node name="lookup2" position="31.00,1.00" prototype="data.lookup">
+                            <port name="key" type="string" value="length"/>
+                        </node>
+                        <node name="null2" position="34.00,-6.00" prototype="corevector.null"/>
+                        <node name="point1" position="28.00,-4.00" prototype="corevector.point"/>
+                        <node name="switch1" position="28.00,5.00" prototype="list.switch"/>
+                        <port childReference="null2.shape" description="The input shape." label="" name="contour" range="value" type="geometry" widget="none"/>
+                        <conn input="connect1.points" output="point1"/>
+                        <conn input="point1.value" output="null2"/>
+                        <conn input="lookup1.list" output="null2"/>
+                        <conn input="connect2.points" output="point1"/>
+                        <conn input="switch1.index" output="compare1"/>
+                        <conn input="switch1.input1" output="connect1"/>
+                        <conn input="switch1.input2" output="connect2"/>
+                        <conn input="compare1.value1" output="lookup2"/>
+                        <conn input="compare1.value2" output="lookup1"/>
+                        <conn input="lookup2.list" output="connect2"/>
+                    </node>
+                    <port childReference="null1.shape" description="The input shape." label="" name="shape" range="value" type="geometry" widget="none"/>
+                    <conn input="lookup4.list" output="null1"/>
+                    <conn input="redraw.contour" output="lookup4"/>
+                </node>
+                <node name="divide1" position="20.00,6.00" prototype="math.divide">
+                    <port name="value1" type="float" value="1.0"/>
+                    <port name="value2" type="float" value="1000.0"/>
+                </node>
+                <node name="first1" position="31.00,13.00" prototype="list.first"/>
+                <node comment="returns true if path is closed; paths with multiple contours treated as closed" name="is_closed" outputType="boolean" position="-5.00,15.00" prototype="core.network" renderedChild="logical1">
+                    <node name="compare1" position="11.00,27.00" prototype="math.compare">
+                        <port name="comparator" type="string" value="&gt;="/>
+                    </node>
+                    <node comment="multiple contours" name="compare2" position="17.00,27.00" prototype="math.compare">
+                        <port name="value2" type="float" value="1.0"/>
+                        <port name="comparator" type="string" value="&gt;"/>
+                    </node>
+                    <node name="connect3" position="14.00,24.00" prototype="corevector.connect"/>
+                    <node name="count2" position="17.00,25.00" prototype="list.count"/>
+                    <node name="logical1" position="11.00,29.00" prototype="math.logical"/>
+                    <node name="lookup2" position="14.00,25.00" prototype="data.lookup">
+                        <port name="key" type="string" value="length"/>
+                    </node>
+                    <node name="lookup3" position="11.00,25.00" prototype="data.lookup">
+                        <port name="key" type="string" value="length"/>
+                    </node>
+                    <node name="null1" position="11.00,20.00" prototype="corevector.null"/>
+                    <node name="point1" position="14.00,23.00" prototype="corevector.point"/>
+                    <node name="point3" position="17.00,24.00" prototype="corevector.point"/>
+                    <node name="resample1" position="17.00,23.00" prototype="corevector.resample">
+                        <port name="method" type="string" value="amount"/>
+                        <port name="points" type="int" value="1"/>
+                        <port name="per_contour" type="boolean" value="true"/>
+                    </node>
+                    <port childReference="null1.shape" description="The input shape." label="" name="shape" range="value" type="geometry" widget="none"/>
+                    <conn input="point1.value" output="null1"/>
+                    <conn input="connect3.points" output="point1"/>
+                    <conn input="lookup2.list" output="connect3"/>
+                    <conn input="lookup3.list" output="null1"/>
+                    <conn input="compare1.value1" output="lookup3"/>
+                    <conn input="compare1.value2" output="lookup2"/>
+                    <conn input="point3.value" output="resample1"/>
+                    <conn input="count2.list" output="point3"/>
+                    <conn input="resample1.shape" output="null1"/>
+                    <conn input="compare2.value1" output="count2"/>
+                    <conn input="logical1.boolean1" output="compare1"/>
+                    <conn input="logical1.boolean2" output="compare2"/>
+                </node>
+                <node name="last1" position="25.00,13.00" prototype="list.last"/>
+                <node name="last2" position="22.00,15.00" prototype="list.last"/>
+                <node name="logical1" position="-2.00,18.00" prototype="math.logical">
+                    <port name="comparator" type="string" value="and"/>
+                </node>
+                <node name="logical2" position="-5.00,18.00" prototype="math.logical">
+                    <port name="comparator" type="string" value="and"/>
+                </node>
+                <node name="multiply1" position="-5.00,19.00" prototype="math.multiply">
+                    <port name="value2" type="float" value="4.0"/>
+                </node>
+                <node name="number2" position="-2.00,19.00" prototype="math.number"/>
+                <node name="number3" position="1.00,19.00" prototype="math.number"/>
+                <node name="number4" position="4.00,19.00" prototype="math.number"/>
+                <node name="path" position="7.00,8.00" prototype="corevector.null"/>
+                <node name="point2" position="22.00,14.00" prototype="corevector.point"/>
+                <node name="point_on_path1" position="7.00,15.00" prototype="corevector.point_on_path"/>
+                <node name="point_on_path2" position="10.00,15.00" prototype="corevector.point_on_path">
+                    <port name="t" type="float" value="0.01"/>
+                </node>
+                <node name="point_on_path3" position="19.00,15.00" prototype="corevector.point_on_path">
+                    <port name="t" type="float" value="99.99"/>
+                </node>
+                <node name="point_on_path4" position="25.00,15.00" prototype="corevector.point_on_path">
+                    <port name="t" type="float" value="99.99"/>
+                </node>
+                <node name="point_on_path5" position="28.00,15.00" prototype="corevector.point_on_path">
+                    <port name="t" type="float" value="0.01"/>
+                </node>
+                <node name="point_on_path6" position="13.00,15.00" prototype="corevector.point_on_path"/>
+                <node name="point_on_path7" position="31.00,15.00" prototype="corevector.point_on_path">
+                    <port name="t" type="float" value="99.99"/>
+                </node>
+                <node name="point_on_path8" position="16.00,15.00" prototype="corevector.point_on_path">
+                    <port name="t" type="float" value="0.01"/>
+                </node>
+                <node name="point_on_path9" position="34.00,15.00" prototype="corevector.point_on_path">
+                    <port name="t" type="float" value="0.01"/>
+                </node>
+                <node comment="rounds a floating point number to a given precision" name="precision" position="7.00,25.00" prototype="core.network" renderedChild="switch2">
+                    <node name="compare1" position="-28.00,-4.00" prototype="math.compare">
+                        <port name="comparator" type="string" value="!="/>
+                    </node>
+                    <node name="compare2" position="-28.00,3.00" prototype="math.compare">
+                        <port name="value2" type="float" value="-0.0"/>
+                        <port name="comparator" type="string" value="=="/>
+                    </node>
+                    <node name="concatenate1" position="-31.00,-4.00" prototype="string.concatenate">
+                        <port name="string1" type="string" value="%."/>
+                        <port name="string3" type="string" value="f"/>
+                    </node>
+                    <node name="format_number1" position="-32.00,-2.00" prototype="string.format_number"/>
+                    <node name="number1" position="-31.00,3.00" prototype="math.number"/>
+                    <node name="number3" position="-32.00,-6.00" prototype="math.number">
+                        <port name="value" type="float" value="-0.0"/>
+                    </node>
+                    <node name="number4" position="-32.00,-1.00" prototype="math.number"/>
+                    <node name="precision" position="-29.00,-6.00" prototype="math.integer">
+                        <port name="value" type="int" value="4"/>
+                    </node>
+                    <node name="round1" position="-35.00,-1.00" prototype="math.round"/>
+                    <node name="switch1" position="-32.00,1.00" prototype="list.switch"/>
+                    <node comment="replace minus zeroes with zeroes" name="switch2" position="-32.00,5.00" prototype="list.switch"/>
+                    <port childReference="number3.value" description="" label="" name="value" range="value" type="float" value="-0.0" widget="float"/>
+                    <port childReference="precision.value" description="" label="" min="0.0" name="precision" range="value" type="int" value="4" widget="int"/>
+                    <conn input="format_number1.value" output="number3"/>
+                    <conn input="concatenate1.string2" output="precision"/>
+                    <conn input="format_number1.format" output="concatenate1"/>
+                    <conn input="number4.value" output="format_number1"/>
+                    <conn input="round1.value" output="number3"/>
+                    <conn input="compare1.value1" output="precision"/>
+                    <conn input="switch1.index" output="compare1"/>
+                    <conn input="switch1.input1" output="round1"/>
+                    <conn input="switch1.input2" output="number4"/>
+                    <conn input="compare2.value1" output="switch1"/>
+                    <conn input="switch2.input1" output="switch1"/>
+                    <conn input="switch2.index" output="compare2"/>
+                    <conn input="switch2.input2" output="number1"/>
+                </node>
+                <node name="subtract1" position="13.00,9.00" prototype="math.subtract">
+                    <port name="value2" type="float" value="1.0"/>
+                </node>
+                <node name="subtract2" position="19.00,9.00" prototype="math.subtract">
+                    <port name="value1" type="float" value="100.0"/>
+                </node>
+                <node name="sum1" position="1.00,22.00" prototype="math.sum"/>
+                <node name="switch1" position="7.00,24.00" prototype="list.switch"/>
+                <port childReference="path.shape" description="The input shape." label="" name="path" range="value" type="geometry" widget="none"/>
+                <port childReference="T.value" description="" label="" max="100.0" min="0.0" name="T" range="value" type="float" value="1.0" widget="float"/>
+                <conn input="is_closed.shape" output="path"/>
+                <conn input="angle3.point1" output="point_on_path1"/>
+                <conn input="angle3.point2" output="point_on_path2"/>
+                <conn input="angle4.point1" output="point_on_path3"/>
+                <conn input="last2.list" output="point2"/>
+                <conn input="angle4.point2" output="last2"/>
+                <conn input="angle6.point1" output="point_on_path6"/>
+                <conn input="point_on_path1.shape" output="path"/>
+                <conn input="point_on_path2.shape" output="path"/>
+                <conn input="point_on_path6.shape" output="path"/>
+                <conn input="point_on_path8.shape" output="path"/>
+                <conn input="point_on_path3.shape" output="path"/>
+                <conn input="point2.value" output="path"/>
+                <conn input="subtract1.value1" output="T"/>
+                <conn input="add1.value1" output="T"/>
+                <conn input="point_on_path6.t" output="subtract1"/>
+                <conn input="point_on_path8.t" output="add1"/>
+                <conn input="compare1.value1" output="T"/>
+                <conn input="compare2.value1" output="T"/>
+                <conn input="switch1.input3" output="angle4"/>
+                <conn input="angle6.point2" output="point_on_path8"/>
+                <conn input="switch1.input2" output="angle6"/>
+                <conn input="switch1.input1" output="angle3"/>
+                <conn input="angle5.point1" output="point_on_path4"/>
+                <conn input="angle5.point2" output="point_on_path5"/>
+                <conn input="switch1.input4" output="angle5"/>
+                <conn input="contours.shape" output="path"/>
+                <conn input="last1.list" output="contours"/>
+                <conn input="point_on_path4.shape" output="last1"/>
+                <conn input="point_on_path5.shape" output="last1"/>
+                <conn input="logical1.boolean1" output="is_closed"/>
+                <conn input="logical1.boolean2" output="compare2"/>
+                <conn input="angle7.point1" output="point_on_path7"/>
+                <conn input="angle7.point2" output="point_on_path9"/>
+                <conn input="first1.list" output="contours"/>
+                <conn input="point_on_path7.shape" output="first1"/>
+                <conn input="point_on_path9.shape" output="first1"/>
+                <conn input="compare3.value1" output="T"/>
+                <conn input="logical2.boolean1" output="is_closed"/>
+                <conn input="logical2.boolean2" output="compare3"/>
+                <conn input="multiply1.value1" output="logical2"/>
+                <conn input="sum1.values" output="combine1"/>
+                <conn input="combine1.list1" output="multiply1"/>
+                <conn input="number2.value" output="logical1"/>
+                <conn input="combine1.list2" output="number2"/>
+                <conn input="switch1.index" output="sum1"/>
+                <conn input="number3.value" output="compare1"/>
+                <conn input="combine1.list3" output="number3"/>
+                <conn input="number4.value" output="compare2"/>
+                <conn input="combine1.list4" output="number4"/>
+                <conn input="switch1.input5" output="angle7"/>
+                <conn input="precision.value" output="switch1"/>
+                <conn input="add1.value2" output="divide1"/>
+                <conn input="subtract1.value2" output="divide1"/>
+                <conn input="point_on_path2.t" output="divide1"/>
+                <conn input="point_on_path9.t" output="divide1"/>
+                <conn input="subtract2.value2" output="divide1"/>
+                <conn input="point_on_path7.t" output="subtract2"/>
+                <conn input="point_on_path4.t" output="subtract2"/>
+                <conn input="point_on_path5.t" output="divide1"/>
+                <conn input="point_on_path3.t" output="subtract2"/>
+            </node>
+            <node name="tens_digit" position="-7.00,16.00" prototype="math.integer"/>
+            <node name="translate9" position="-4.00,23.00" prototype="corevector.translate"/>
+            <port childReference="big_boxes.shape" description="The input shape." label="" name="big boxes" range="list" type="geometry" widget="none"/>
+            <port childReference="little_boxes.shape" description="The input shape." label="" name="little boxes" range="list" type="geometry" widget="none"/>
+            <port childReference="tens_digit.value" description="" label="" name="tens digit" range="value" type="int" value="0" widget="int"/>
+            <port childReference="ones_digit.value" description="" label="" max="10.0" min="0.0" name="ones digit" range="value" type="int" value="10" widget="int"/>
+            <conn input="centroid1.shape" output="slice2"/>
+            <conn input="translate9.translate" output="centroid1"/>
+            <conn input="slice2.list" output="big_boxes"/>
+            <conn input="slice2.start_index" output="tens_digit"/>
+            <conn input="translate9.shape" output="little_boxes"/>
+            <conn input="slice1.list" output="translate9"/>
+            <conn input="slice1.size" output="ones_digit"/>
+            <conn input="combine1.list1" output="slice2"/>
+            <conn input="group1.shapes" output="slice1"/>
+            <conn input="tangent.path" output="slice2"/>
+            <conn input="rotate1.shape" output="group1"/>
+            <conn input="rotate1.angle" output="tangent"/>
+            <conn input="rotate1.origin" output="centroid2"/>
+            <conn input="combine1.list7" output="rotate1"/>
+            <conn input="centroid2.shape" output="slice2"/>
+        </node>
+        <node name="divide1" position="15.00,11.00" prototype="math.divide">
+            <port name="value2" type="float" value="10.0"/>
+        </node>
+        <node name="floor1" position="15.00,12.00" prototype="math.floor"/>
+        <node name="frame1" position="12.00,9.00" prototype="core.frame"/>
+        <node name="mod1" position="12.00,12.00" prototype="math.mod">
+            <port name="value2" type="float" value="10.0"/>
+        </node>
+        <node name="number1" position="6.00,9.00" prototype="math.number">
+            <port name="value" type="float" value="24.0"/>
+        </node>
+        <node name="number2" position="13.00,-3.00" prototype="math.number">
+            <port name="value" type="float" value="120.0"/>
+        </node>
+        <node name="range1" position="15.00,14.00" prototype="math.range"/>
+        <node name="rect1" position="1.00,1.00" prototype="corevector.rect">
+            <port name="position" type="point" value="-148.00,188.00"/>
+            <port name="width" type="float" value="135.0"/>
+            <port name="height" type="float" value="135.0"/>
+        </node>
+        <node name="rect10" position="28.00,1.00" prototype="corevector.rect">
+            <port name="width" type="float" value="135.0"/>
+            <port name="height" type="float" value="135.0"/>
+        </node>
+        <node name="rect11" position="6.00,15.00" prototype="corevector.rect">
+            <port name="width" type="float" value="500.0"/>
+            <port name="height" type="float" value="500.0"/>
+        </node>
+        <node name="rect2" prototype="corevector.rect">
+            <port name="width" type="float" value="135.0"/>
+            <port name="height" type="float" value="135.0"/>
+        </node>
+        <node name="rect3" position="7.00,1.00" prototype="corevector.rect">
+            <port name="width" type="float" value="135.0"/>
+            <port name="height" type="float" value="135.0"/>
+        </node>
+        <node name="rect4" position="10.00,1.00" prototype="corevector.rect">
+            <port name="width" type="float" value="135.0"/>
+            <port name="height" type="float" value="135.0"/>
+        </node>
+        <node name="rect5" position="13.00,1.00" prototype="corevector.rect">
+            <port name="width" type="float" value="135.0"/>
+            <port name="height" type="float" value="135.0"/>
+        </node>
+        <node name="rect6" position="16.00,1.00" prototype="corevector.rect">
+            <port name="width" type="float" value="135.0"/>
+            <port name="height" type="float" value="135.0"/>
+        </node>
+        <node name="rect7" position="19.00,1.00" prototype="corevector.rect">
+            <port name="width" type="float" value="135.0"/>
+            <port name="height" type="float" value="135.0"/>
+        </node>
+        <node name="rect8" position="22.00,1.00" prototype="corevector.rect">
+            <port name="width" type="float" value="135.0"/>
+            <port name="height" type="float" value="135.0"/>
+        </node>
+        <node name="rect9" position="25.00,1.00" prototype="corevector.rect">
+            <port name="width" type="float" value="135.0"/>
+            <port name="height" type="float" value="135.0"/>
+        </node>
+        <node name="rotate1" position="4.00,2.00" prototype="corevector.rotate">
+            <port name="angle" type="float" value="34.0"/>
+        </node>
+        <node name="rotate2" position="7.00,2.00" prototype="corevector.rotate">
+            <port name="angle" type="float" value="-13.0"/>
+        </node>
+        <node name="rotate3" position="10.00,2.00" prototype="corevector.rotate">
+            <port name="angle" type="float" value="-7.0"/>
+        </node>
+        <node name="rotate4" position="13.00,2.00" prototype="corevector.rotate">
+            <port name="angle" type="float" value="5.0"/>
+        </node>
+        <node name="rotate5" position="16.00,2.00" prototype="corevector.rotate">
+            <port name="angle" type="float" value="-7.0"/>
+        </node>
+        <node name="rotate6" position="19.00,2.00" prototype="corevector.rotate">
+            <port name="angle" type="float" value="-10.0"/>
+        </node>
+        <node name="rotate7" position="22.00,2.00" prototype="corevector.rotate">
+            <port name="angle" type="float" value="-68.0"/>
+        </node>
+        <node name="rotate8" position="25.00,2.00" prototype="corevector.rotate">
+            <port name="angle" type="float" value="-127.0"/>
+        </node>
+        <node name="rotate9" position="28.00,2.00" prototype="corevector.rotate">
+            <port name="angle" type="float" value="7.0"/>
+        </node>
+        <node name="scale1" position="6.00,11.00" prototype="corevector.scale"/>
+        <node name="translate1" position="4.00,3.00" prototype="corevector.translate">
+            <port name="translate" type="point" value="-5.00,166.00"/>
+        </node>
+        <node name="translate10" position="28.00,3.00" prototype="corevector.translate">
+            <port name="translate" type="point" value="-119.00,-181.00"/>
+        </node>
+        <node name="translate2" position="7.00,3.00" prototype="corevector.translate">
+            <port name="translate" type="point" value="146.00,177.00"/>
+        </node>
+        <node name="translate3" position="10.00,3.00" prototype="corevector.translate">
+            <port name="translate" type="point" value="-108.00,61.00"/>
+        </node>
+        <node name="translate4" position="13.00,3.00" prototype="corevector.translate">
+            <port name="translate" type="point" value="20.00,26.00"/>
+        </node>
+        <node name="translate5" position="16.00,3.00" prototype="corevector.translate">
+            <port name="translate" type="point" value="150.00,49.00"/>
+        </node>
+        <node name="translate6" position="19.00,3.00" prototype="corevector.translate">
+            <port name="translate" type="point" value="-179.00,-52.00"/>
+        </node>
+        <node name="translate7" position="22.00,3.00" prototype="corevector.translate">
+            <port name="translate" type="point" value="-3.00,-112.00"/>
+        </node>
+        <node name="translate8" position="25.00,3.00" prototype="corevector.translate">
+            <port name="translate" type="point" value="143.00,-93.00"/>
+        </node>
+        <conn input="combine1.list1" output="rect1"/>
+        <conn input="rotate1.shape" output="rect2"/>
+        <conn input="translate1.shape" output="rotate1"/>
+        <conn input="combine1.list2" output="translate1"/>
+        <conn input="rotate2.shape" output="rect3"/>
+        <conn input="translate2.shape" output="rotate2"/>
+        <conn input="combine1.list3" output="translate2"/>
+        <conn input="rotate3.shape" output="rect4"/>
+        <conn input="translate3.shape" output="rotate3"/>
+        <conn input="combine1.list4" output="translate3"/>
+        <conn input="rotate4.shape" output="rect5"/>
+        <conn input="translate4.shape" output="rotate4"/>
+        <conn input="combine1.list5" output="translate4"/>
+        <conn input="rotate5.shape" output="rect6"/>
+        <conn input="translate5.shape" output="rotate5"/>
+        <conn input="combine1.list6" output="translate5"/>
+        <conn input="rotate6.shape" output="rect7"/>
+        <conn input="translate6.shape" output="rotate6"/>
+        <conn input="combine2.list1" output="translate6"/>
+        <conn input="combine3.list1" output="combine1"/>
+        <conn input="combine3.list7" output="combine2"/>
+        <conn input="colorize1.shape" output="combine3"/>
+        <conn input="rotate7.shape" output="rect8"/>
+        <conn input="translate7.shape" output="rotate7"/>
+        <conn input="combine2.list2" output="translate7"/>
+        <conn input="rotate8.shape" output="rect9"/>
+        <conn input="translate8.shape" output="rotate8"/>
+        <conn input="mod1.value1" output="frame1"/>
+        <conn input="divide1.value1" output="frame1"/>
+        <conn input="floor1.value" output="divide1"/>
+        <conn input="scale1.shape" output="combine3"/>
+        <conn input="scale1.scale" output="number1"/>
+        <conn input="colorize2.shape" output="scale1"/>
+        <conn input="rect1.width" output="number2"/>
+        <conn input="rect1.height" output="number2"/>
+        <conn input="rect2.width" output="number2"/>
+        <conn input="rect2.height" output="number2"/>
+        <conn input="rect3.width" output="number2"/>
+        <conn input="rect3.height" output="number2"/>
+        <conn input="rect4.width" output="number2"/>
+        <conn input="rect4.height" output="number2"/>
+        <conn input="rect5.width" output="number2"/>
+        <conn input="rect5.height" output="number2"/>
+        <conn input="rect6.width" output="number2"/>
+        <conn input="rect6.height" output="number2"/>
+        <conn input="rect7.width" output="number2"/>
+        <conn input="rect7.height" output="number2"/>
+        <conn input="rect8.width" output="number2"/>
+        <conn input="rect8.height" output="number2"/>
+        <conn input="rect9.width" output="number2"/>
+        <conn input="rect9.height" output="number2"/>
+        <conn input="combine2.list4" output="translate8"/>
+        <conn input="rotate9.shape" output="rect10"/>
+        <conn input="translate10.shape" output="rotate9"/>
+        <conn input="rect10.width" output="number2"/>
+        <conn input="rect10.height" output="number2"/>
+        <conn input="combine2.list7" output="translate10"/>
+        <conn input="crate.big boxes" output="colorize1"/>
+        <conn input="crate.little boxes" output="colorize2"/>
+        <conn input="crate.tens digit" output="floor1"/>
+        <conn input="crate.ones digit" output="mod1"/>
+        <conn input="range1.end" output="floor1"/>
+        <conn input="combine4.list2" output="crate"/>
+        <conn input="crate_full.big boxes" output="colorize1"/>
+        <conn input="crate_full.little boxes" output="colorize2"/>
+        <conn input="crate_full.tens digit" output="range1"/>
+        <conn input="combine4.list3" output="crate_full"/>
+        <conn input="colorize3.shape" output="rect11"/>
+        <conn input="combine4.list1" output="colorize3"/>
+    </node>
+</ndbx>
