@@ -1,0 +1,6 @@
+Nome: Eduardo Zmievski a.k.a. CurlyBoy
+Link: https://www.instagram.com/curlyboy_____/
+Link: https://www.openprocessing.org/user/89655#sketches
+Descrição: Este código simples gera um retângulo que gira sobre si mesmo quadro a quadro até chegar na contagem de 100
+Description: This is a simple sketch where a rectangle spin over itself frame by frame until reaches the count of 100 then it stops.
+Plataforma: p5.js
