@@ -1,0 +1,5 @@
+Nome: André Burnier
+Link: www.andreburnier.com
+Link: www.instagram.com/burnier
+Descrição: Contador que utiliza Perlin Noise pra dividir uma rotação completa em 100 partes desiguais.
+Plataforma: Processing

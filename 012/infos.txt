@@ -1,0 +1,5 @@
+Nome: André Burnier
+Link: www.andreburnier.com
+Link: www.instagram.com/burnier
+Descrição: Contador que divide a altura pelo número contado – cada linha sub-dividida pelo número da linha.
+Plataforma: Processing
