@@ -1,0 +1,3 @@
+Nome: Thiago Correia
+Descrição: Cria retângulos a partir do eixo x utilizando o ruído de Perlin para definir altura e tom de cinza.
+Plataforma: Processing
