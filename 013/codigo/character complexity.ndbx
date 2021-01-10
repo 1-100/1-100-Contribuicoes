@@ -1,0 +1,868 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ndbx formatVersion="21" type="file" uuid="137b55de-3f72-4902-9470-ec388e7045bd">
+    <property name="canvasHeight" value="500"/>
+    <property name="canvasWidth" value="500"/>
+    <property name="canvasX" value="0"/>
+    <property name="canvasY" value="0"/>
+    <node name="root" prototype="core.network" renderedChild="combine6">
+        <node name="add_one_two" position="3.00,7.00" prototype="core.network" renderedChild="combine7">
+            <node name="align3" position="-14.00,10.00" prototype="corevector.align"/>
+            <node name="align4" position="-11.00,11.00" prototype="corevector.align"/>
+            <node name="colorize4" position="-8.00,11.00" prototype="corevector.colorize">
+                <port name="strokeWidth" type="float" value="3.0"/>
+            </node>
+            <node name="combine7" position="-14.00,16.00" prototype="list.combine"/>
+            <node name="combine8" position="-11.00,13.00" prototype="list.combine"/>
+            <node name="copy1" position="-11.00,9.00" prototype="corevector.copy">
+                <port name="copies" type="int" value="2"/>
+                <port name="translate" type="point" value="200.00,200.00"/>
+            </node>
+            <node name="first1" position="-14.00,5.00" prototype="list.first"/>
+            <node name="group3" position="-11.00,10.00" prototype="corevector.group"/>
+            <node name="group4" position="-11.00,14.00" prototype="corevector.group"/>
+            <node name="line2" position="-8.00,10.00" prototype="corevector.line">
+                <port name="point1" type="point" value="-100.00,-100.00"/>
+            </node>
+            <node name="second1" position="-14.00,7.00" prototype="list.second"/>
+            <node name="shape_list" position="-10.00,3.00" prototype="corevector.null"/>
+            <node name="ungroup1" position="-14.00,6.00" prototype="corevector.ungroup"/>
+            <port childReference="shape_list.shape" description="The input shape." label="" name="shape list" range="list" type="geometry" widget="none"/>
+            <conn input="ungroup1.shape" output="first1"/>
+            <conn input="second1.list" output="ungroup1"/>
+            <conn input="align3.shape" output="second1"/>
+            <conn input="combine7.list1" output="align3"/>
+            <conn input="copy1.shape" output="second1"/>
+            <conn input="group3.shapes" output="copy1"/>
+            <conn input="align4.shape" output="group3"/>
+            <conn input="colorize4.shape" output="line2"/>
+            <conn input="combine8.list1" output="colorize4"/>
+            <conn input="combine8.list2" output="align4"/>
+            <conn input="group4.shapes" output="combine8"/>
+            <conn input="combine7.list2" output="group4"/>
+            <conn input="first1.list" output="shape_list"/>
+            <conn input="combine7.list7" output="shape_list"/>
+        </node>
+        <node name="align1" position="7.00,15.00" prototype="corevector.align"/>
+        <node name="align2" position="-1.00,10.00" prototype="corevector.align"/>
+        <node comment="constrain values within upper and/or lower bounds" name="bounds" position="-1.00,7.00" prototype="core.network" renderedChild="switch3">
+            <node name="compare1" position="-6.00,7.00" prototype="math.compare"/>
+            <node name="compare2" position="7.00,7.00" prototype="math.compare">
+                <port name="comparator" type="string" value="&gt;"/>
+            </node>
+            <node name="high" position="7.00,4.00" prototype="math.number">
+                <port name="value" type="float" value="99.0"/>
+            </node>
+            <node name="low" position="-4.00,4.00" prototype="math.number">
+                <port name="value" type="float" value="-80.0"/>
+            </node>
+            <node name="option" position="7.00,12.00" prototype="string.string">
+                <port name="value" type="string" value="1"/>
+            </node>
+            <node name="switch1" position="-3.00,9.00" prototype="list.switch"/>
+            <node name="switch2" position="1.00,9.00" prototype="list.switch"/>
+            <node name="switch3" position="-2.00,14.00" prototype="list.switch"/>
+            <node name="switch4" position="3.00,12.00" prototype="list.switch"/>
+            <node name="value" position="1.00,4.00" prototype="math.number"/>
+            <port childReference="value.value" description="" label="" name="value" range="value" type="float" value="0.0" widget="float"/>
+            <port childReference="low.value" description="" label="" name="lower bound" range="value" type="float" value="-80.0" widget="float"/>
+            <port childReference="high.value" description="" label="" name="upper bound" range="value" type="float" value="99.0" widget="float"/>
+            <port childReference="option.value" description="" label="" name="option" range="value" type="string" value="1" widget="menu">
+                <menu key="0" label="Lower Bound"/>
+                <menu key="1" label="Upper Bound"/>
+                <menu key="2" label="Both"/>
+                <menu key="3" label="Neither"/>
+            </port>
+            <conn input="compare1.value1" output="value"/>
+            <conn input="compare1.value2" output="low"/>
+            <conn input="switch1.input1" output="value"/>
+            <conn input="switch1.input2" output="low"/>
+            <conn input="switch1.index" output="compare1"/>
+            <conn input="compare2.value1" output="value"/>
+            <conn input="compare2.value2" output="high"/>
+            <conn input="switch2.index" output="compare2"/>
+            <conn input="switch2.input2" output="high"/>
+            <conn input="switch2.input1" output="value"/>
+            <conn input="switch3.input1" output="switch1"/>
+            <conn input="switch3.input2" output="switch2"/>
+            <conn input="switch4.index" output="compare2"/>
+            <conn input="switch4.input2" output="high"/>
+            <conn input="switch4.input1" output="switch1"/>
+            <conn input="switch3.input3" output="switch4"/>
+            <conn input="switch3.index" output="option"/>
+            <conn input="switch3.input4" output="value"/>
+        </node>
+        <node name="colorize1" position="4.00,15.00" prototype="corevector.colorize">
+            <port name="fill" type="color" value="#ffffffff"/>
+        </node>
+        <node name="colorize2" position="10.00,10.00" prototype="corevector.colorize">
+            <port name="fill" type="color" value="#4d4d4dff"/>
+        </node>
+        <node name="colorize3" position="-4.00,11.00" prototype="corevector.colorize">
+            <port name="fill" type="color" value="#ffffffff"/>
+        </node>
+        <node name="combine1" position="7.00,-7.00" prototype="list.combine"/>
+        <node name="combine2" position="7.00,12.00" prototype="list.combine"/>
+        <node name="combine3" position="28.00,-7.00" prototype="list.combine"/>
+        <node name="combine4" position="7.00,-4.00" prototype="list.combine"/>
+        <node name="combine5" position="4.00,17.00" prototype="list.combine"/>
+        <node name="combine6" position="-4.00,13.00" prototype="list.combine"/>
+        <node name="count1" position="10.00,3.00" prototype="list.count"/>
+        <node name="distinct1" position="7.00,-3.00" prototype="list.distinct">
+            <port name="key" type="string" value="count"/>
+        </node>
+        <node name="divide1" position="-1.00,5.00" prototype="math.divide"/>
+        <node name="filter_data1" position="8.00,-1.00" prototype="data.filter_data">
+            <port name="key" type="string" value="count"/>
+            <port name="op" type="string" value="&lt;="/>
+            <port name="value" type="string" value="100"/>
+        </node>
+        <node name="floor1" position="-1.00,6.00" prototype="math.floor"/>
+        <node name="frame1" position="-1.00,2.00" prototype="core.frame"/>
+        <node comment="create a grid of points sized by cell width and height with options for a limit and different orders" name="grid_plus" outputType="point" position="8.00,7.00" prototype="core.network" renderedChild="translate1">
+            <node name="ceil1" position="31.00,3.00" prototype="math.ceil"/>
+            <node name="cell_height" position="30.00,-1.00" prototype="math.number">
+                <port name="value" type="float" value="720.0"/>
+            </node>
+            <node name="cell_width" position="26.00,-1.00" prototype="math.number">
+                <port name="value" type="float" value="480.0"/>
+            </node>
+            <node name="centroid1" position="31.00,25.00" prototype="corevector.centroid"/>
+            <node name="centroid2" position="34.00,25.00" prototype="corevector.centroid"/>
+            <node name="centroid3" position="37.00,25.00" prototype="corevector.centroid"/>
+            <node name="columns" position="20.00,-1.00" prototype="math.integer">
+                <port name="value" type="int" value="14"/>
+            </node>
+            <node name="compare1" position="34.00,3.00" prototype="math.compare">
+                <port name="comparator" type="string" value="&gt;"/>
+            </node>
+            <node name="divide1" position="31.00,2.00" prototype="math.divide"/>
+            <node name="grid2" position="20.00,12.00" prototype="corevector.grid"/>
+            <node name="limit" position="37.00,-1.00" prototype="math.integer"/>
+            <node name="multiply1" position="26.00,10.00" prototype="math.multiply"/>
+            <node name="multiply2" position="30.00,10.00" prototype="math.multiply"/>
+            <node name="position" position="47.00,-1.00" prototype="corevector.point"/>
+            <node name="rect1" position="31.00,20.00" prototype="corevector.rect"/>
+            <node name="reflect1" position="31.00,22.00" prototype="corevector.reflect">
+                <port name="angle" type="float" value="90.0"/>
+                <port name="keep_original" type="boolean" value="false"/>
+            </node>
+            <node name="reflect2" position="34.00,22.00" prototype="corevector.reflect">
+                <port name="angle" type="float" value="0.0"/>
+                <port name="keep_original" type="boolean" value="false"/>
+            </node>
+            <node name="reflect3" position="37.00,24.00" prototype="corevector.reflect">
+                <port name="angle" type="float" value="90.0"/>
+                <port name="keep_original" type="boolean" value="false"/>
+            </node>
+            <node name="rows" position="23.00,-1.00" prototype="math.integer">
+                <port name="value" type="int" value="10"/>
+            </node>
+            <node name="slice1" position="36.00,14.00" prototype="list.slice"/>
+            <node name="start_at" position="44.00,-1.00" prototype="string.string">
+                <port name="value" type="string" value="0"/>
+            </node>
+            <node name="subtract1" position="23.00,8.00" prototype="math.subtract">
+                <port name="value2" type="float" value="1.0"/>
+            </node>
+            <node name="subtract2" position="27.00,8.00" prototype="math.subtract">
+                <port name="value2" type="float" value="1.0"/>
+            </node>
+            <node name="switch1" position="33.00,16.00" prototype="list.switch"/>
+            <node name="switch2" position="42.00,28.00" prototype="list.switch"/>
+            <node name="switch3" position="23.00,5.00" prototype="list.switch"/>
+            <node name="translate1" position="47.00,30.00" prototype="corevector.translate"/>
+            <port childReference="columns.value" description="" label="" min="1.0" name="columns" range="value" type="int" value="14" widget="int"/>
+            <port childReference="rows.value" description="" label="" min="1.0" name="rows" range="value" type="int" value="10" widget="int"/>
+            <port childReference="cell_width.value" description="" label="" min="0.0" name="cell width" range="value" type="float" value="480.0" widget="float"/>
+            <port childReference="cell_height.value" description="" label="" min="0.0" name="cell height" range="value" type="float" value="720.0" widget="float"/>
+            <port childReference="limit.value" description="" label="" min="0.0" name="limit" range="value" type="int" value="0" widget="int"/>
+            <port childReference="start_at.value" description="" label="" name="start at" range="value" type="string" value="0" widget="menu">
+                <menu key="0" label="Top Left"/>
+                <menu key="1" label="Top Right"/>
+                <menu key="2" label="Bottom Left"/>
+                <menu key="3" label="Bottom Right"/>
+            </port>
+            <port childReference="position.value" description="The input point." label="" name="position" range="value" type="point" value="0.00,0.00" widget="point"/>
+            <conn input="grid2.columns" output="columns"/>
+            <conn input="compare1.value1" output="limit"/>
+            <conn input="switch1.index" output="compare1"/>
+            <conn input="slice1.list" output="grid2"/>
+            <conn input="slice1.size" output="limit"/>
+            <conn input="switch1.input2" output="slice1"/>
+            <conn input="switch1.input1" output="grid2"/>
+            <conn input="subtract1.value1" output="columns"/>
+            <conn input="multiply1.value1" output="subtract1"/>
+            <conn input="multiply1.value2" output="cell_width"/>
+            <conn input="multiply2.value1" output="subtract2"/>
+            <conn input="multiply2.value2" output="cell_height"/>
+            <conn input="grid2.width" output="multiply1"/>
+            <conn input="grid2.height" output="multiply2"/>
+            <conn input="rect1.position" output="switch1"/>
+            <conn input="reflect1.shape" output="rect1"/>
+            <conn input="centroid1.shape" output="reflect1"/>
+            <conn input="reflect2.shape" output="rect1"/>
+            <conn input="centroid2.shape" output="reflect2"/>
+            <conn input="centroid3.shape" output="reflect3"/>
+            <conn input="reflect3.shape" output="reflect2"/>
+            <conn input="switch2.input1" output="switch1"/>
+            <conn input="switch2.input2" output="centroid1"/>
+            <conn input="switch2.input3" output="centroid2"/>
+            <conn input="switch2.input4" output="centroid3"/>
+            <conn input="switch2.index" output="start_at"/>
+            <conn input="translate1.shape" output="switch2"/>
+            <conn input="translate1.translate" output="position"/>
+            <conn input="switch3.index" output="compare1"/>
+            <conn input="divide1.value1" output="limit"/>
+            <conn input="divide1.value2" output="columns"/>
+            <conn input="ceil1.value" output="divide1"/>
+            <conn input="switch3.input2" output="ceil1"/>
+            <conn input="switch3.input1" output="rows"/>
+            <conn input="subtract2.value1" output="switch3"/>
+            <conn input="grid2.rows" output="switch3"/>
+        </node>
+        <node name="group1" position="7.00,10.00" prototype="corevector.group"/>
+        <node name="group2" position="7.00,14.00" prototype="corevector.group"/>
+        <node name="letter" position="7.00,-12.00" prototype="core.network" renderedChild="zip_map1">
+            <node name="colorize1" position="2.00,5.00" prototype="corevector.colorize">
+                <port name="fill" type="color" value="#797979ff"/>
+            </node>
+            <node name="colorize2" position="3.00,11.00" prototype="corevector.colorize">
+                <port name="fill" type="color" value="#ff0000a2"/>
+            </node>
+            <node name="combine1" position="2.00,14.00" prototype="list.combine"/>
+            <node name="combine2" position="9.00,17.00" prototype="list.combine"/>
+            <node name="count1" position="9.00,9.00" prototype="list.count"/>
+            <node name="ellipse1" position="3.00,10.00" prototype="corevector.ellipse">
+                <port name="width" type="float" value="8.0"/>
+                <port name="height" type="float" value="8.0"/>
+            </node>
+            <node name="group1" position="2.00,15.00" prototype="corevector.group"/>
+            <node name="make_strings1" position="6.00,17.00" prototype="string.make_strings">
+                <port name="string" type="string" value="count,character"/>
+                <port name="separator" type="string" value=","/>
+            </node>
+            <node name="point1" position="3.00,7.00" prototype="corevector.point"/>
+            <node name="textpath1" position="2.00,4.00" prototype="corevector.textpath">
+                <port name="text" type="string" value="a"/>
+                <port name="font_name" type="string" value="Times-Roman"/>
+                <port name="font_size" type="float" value="500.0"/>
+            </node>
+            <node name="textpath2" position="6.00,11.00" prototype="corevector.textpath">
+                <port name="font_size" type="float" value="73.0"/>
+                <port name="position" type="point" value="0.00,80.00"/>
+            </node>
+            <node name="zip_map1" position="6.00,20.00" prototype="list.zip_map"/>
+            <port childReference="textpath1.text" description="The input text." label="" name="character" range="value" type="string" value="a" widget="string"/>
+            <port childReference="textpath1.font_name" description="The name of the font." label="" name="font_name" range="value" type="string" value="Times-Roman" widget="font"/>
+            <port childReference="textpath1.font_size" description="The size of the font." label="" name="font_size" range="value" type="float" value="500.0" widget="float"/>
+            <conn input="count1.list" output="point1"/>
+            <conn input="textpath2.text" output="count1"/>
+            <conn input="colorize1.shape" output="textpath1"/>
+            <conn input="point1.value" output="colorize1"/>
+            <conn input="ellipse1.position" output="point1"/>
+            <conn input="colorize2.shape" output="ellipse1"/>
+            <conn input="combine1.list1" output="colorize1"/>
+            <conn input="combine1.list3" output="colorize2"/>
+            <conn input="combine1.list7" output="textpath2"/>
+            <conn input="group1.shapes" output="combine1"/>
+            <conn input="combine2.list1" output="count1"/>
+            <conn input="combine2.list2" output="group1"/>
+            <conn input="zip_map1.keys" output="make_strings1"/>
+            <conn input="zip_map1.values" output="combine2"/>
+        </node>
+        <node name="letter1" position="10.00,-12.00" prototype="core.network" renderedChild="zip_map1">
+            <node name="colorize1" position="2.00,5.00" prototype="corevector.colorize">
+                <port name="fill" type="color" value="#797979ff"/>
+            </node>
+            <node name="colorize2" position="3.00,11.00" prototype="corevector.colorize">
+                <port name="fill" type="color" value="#ff0000a2"/>
+            </node>
+            <node name="combine1" position="2.00,14.00" prototype="list.combine"/>
+            <node name="combine2" position="9.00,17.00" prototype="list.combine"/>
+            <node name="count1" position="9.00,9.00" prototype="list.count"/>
+            <node name="ellipse1" position="3.00,10.00" prototype="corevector.ellipse">
+                <port name="width" type="float" value="8.0"/>
+                <port name="height" type="float" value="8.0"/>
+            </node>
+            <node name="group1" position="2.00,15.00" prototype="corevector.group"/>
+            <node name="make_strings1" position="6.00,17.00" prototype="string.make_strings">
+                <port name="string" type="string" value="count,character"/>
+                <port name="separator" type="string" value=","/>
+            </node>
+            <node name="point1" position="3.00,7.00" prototype="corevector.point"/>
+            <node name="textpath1" position="2.00,4.00" prototype="corevector.textpath">
+                <port name="text" type="string" value="a"/>
+                <port name="font_size" type="float" value="500.0"/>
+            </node>
+            <node name="textpath2" position="6.00,11.00" prototype="corevector.textpath">
+                <port name="font_size" type="float" value="73.0"/>
+                <port name="position" type="point" value="0.00,80.00"/>
+            </node>
+            <node name="zip_map1" position="6.00,20.00" prototype="list.zip_map"/>
+            <port childReference="textpath1.text" description="The input text." label="" name="character" range="value" type="string" value="a" widget="string"/>
+            <port childReference="textpath1.font_name" description="The name of the font." label="" name="font_name" range="value" type="string" value="Verdana" widget="font"/>
+            <port childReference="textpath1.font_size" description="The size of the font." label="" name="font_size" range="value" type="float" value="500.0" widget="float"/>
+            <conn input="count1.list" output="point1"/>
+            <conn input="textpath2.text" output="count1"/>
+            <conn input="colorize1.shape" output="textpath1"/>
+            <conn input="point1.value" output="colorize1"/>
+            <conn input="ellipse1.position" output="point1"/>
+            <conn input="colorize2.shape" output="ellipse1"/>
+            <conn input="combine1.list1" output="colorize1"/>
+            <conn input="combine1.list3" output="colorize2"/>
+            <conn input="combine1.list7" output="textpath2"/>
+            <conn input="group1.shapes" output="combine1"/>
+            <conn input="combine2.list1" output="count1"/>
+            <conn input="combine2.list2" output="group1"/>
+            <conn input="zip_map1.keys" output="make_strings1"/>
+            <conn input="zip_map1.values" output="combine2"/>
+        </node>
+        <node name="letter2" position="13.00,-12.00" prototype="core.network" renderedChild="zip_map1">
+            <node name="colorize1" position="2.00,5.00" prototype="corevector.colorize">
+                <port name="fill" type="color" value="#797979ff"/>
+            </node>
+            <node name="colorize2" position="3.00,11.00" prototype="corevector.colorize">
+                <port name="fill" type="color" value="#ff0000a2"/>
+            </node>
+            <node name="combine1" position="2.00,14.00" prototype="list.combine"/>
+            <node name="combine2" position="9.00,17.00" prototype="list.combine"/>
+            <node name="count1" position="9.00,9.00" prototype="list.count"/>
+            <node name="ellipse1" position="3.00,10.00" prototype="corevector.ellipse">
+                <port name="width" type="float" value="8.0"/>
+                <port name="height" type="float" value="8.0"/>
+            </node>
+            <node name="group1" position="2.00,15.00" prototype="corevector.group"/>
+            <node name="make_strings1" position="6.00,17.00" prototype="string.make_strings">
+                <port name="string" type="string" value="count,character"/>
+                <port name="separator" type="string" value=","/>
+            </node>
+            <node name="point1" position="3.00,7.00" prototype="corevector.point"/>
+            <node name="textpath1" position="2.00,4.00" prototype="corevector.textpath">
+                <port name="text" type="string" value="a"/>
+                <port name="font_name" type="string" value="Helvetica"/>
+                <port name="font_size" type="float" value="500.0"/>
+            </node>
+            <node name="textpath2" position="6.00,11.00" prototype="corevector.textpath">
+                <port name="font_size" type="float" value="73.0"/>
+                <port name="position" type="point" value="0.00,80.00"/>
+            </node>
+            <node name="zip_map1" position="6.00,20.00" prototype="list.zip_map"/>
+            <port childReference="textpath1.text" description="The input text." label="" name="character" range="value" type="string" value="a" widget="string"/>
+            <port childReference="textpath1.font_name" description="The name of the font." label="" name="font_name" range="value" type="string" value="Helvetica" widget="font"/>
+            <port childReference="textpath1.font_size" description="The size of the font." label="" name="font_size" range="value" type="float" value="500.0" widget="float"/>
+            <conn input="count1.list" output="point1"/>
+            <conn input="textpath2.text" output="count1"/>
+            <conn input="colorize1.shape" output="textpath1"/>
+            <conn input="point1.value" output="colorize1"/>
+            <conn input="ellipse1.position" output="point1"/>
+            <conn input="colorize2.shape" output="ellipse1"/>
+            <conn input="combine1.list1" output="colorize1"/>
+            <conn input="combine1.list3" output="colorize2"/>
+            <conn input="combine1.list7" output="textpath2"/>
+            <conn input="group1.shapes" output="combine1"/>
+            <conn input="combine2.list1" output="count1"/>
+            <conn input="combine2.list2" output="group1"/>
+            <conn input="zip_map1.keys" output="make_strings1"/>
+            <conn input="zip_map1.values" output="combine2"/>
+        </node>
+        <node name="letter3" position="16.00,-12.00" prototype="core.network" renderedChild="zip_map1">
+            <node name="colorize1" position="2.00,5.00" prototype="corevector.colorize">
+                <port name="fill" type="color" value="#797979ff"/>
+            </node>
+            <node name="colorize2" position="3.00,11.00" prototype="corevector.colorize">
+                <port name="fill" type="color" value="#ff0000a2"/>
+            </node>
+            <node name="combine1" position="2.00,14.00" prototype="list.combine"/>
+            <node name="combine2" position="9.00,17.00" prototype="list.combine"/>
+            <node name="count1" position="9.00,9.00" prototype="list.count"/>
+            <node name="ellipse1" position="3.00,10.00" prototype="corevector.ellipse">
+                <port name="width" type="float" value="8.0"/>
+                <port name="height" type="float" value="8.0"/>
+            </node>
+            <node name="group1" position="2.00,15.00" prototype="corevector.group"/>
+            <node name="make_strings1" position="6.00,17.00" prototype="string.make_strings">
+                <port name="string" type="string" value="count,character"/>
+                <port name="separator" type="string" value=","/>
+            </node>
+            <node name="point1" position="3.00,7.00" prototype="corevector.point"/>
+            <node name="textpath1" position="2.00,4.00" prototype="corevector.textpath">
+                <port name="text" type="string" value="a"/>
+                <port name="font_name" type="string" value="Times-Italic"/>
+                <port name="font_size" type="float" value="500.0"/>
+            </node>
+            <node name="textpath2" position="6.00,11.00" prototype="corevector.textpath">
+                <port name="font_size" type="float" value="73.0"/>
+                <port name="position" type="point" value="0.00,80.00"/>
+            </node>
+            <node name="zip_map1" position="6.00,20.00" prototype="list.zip_map"/>
+            <port childReference="textpath1.text" description="The input text." label="" name="character" range="value" type="string" value="a" widget="string"/>
+            <port childReference="textpath1.font_name" description="The name of the font." label="" name="font_name" range="value" type="string" value="Times-Italic" widget="font"/>
+            <port childReference="textpath1.font_size" description="The size of the font." label="" name="font_size" range="value" type="float" value="500.0" widget="float"/>
+            <conn input="count1.list" output="point1"/>
+            <conn input="textpath2.text" output="count1"/>
+            <conn input="colorize1.shape" output="textpath1"/>
+            <conn input="point1.value" output="colorize1"/>
+            <conn input="ellipse1.position" output="point1"/>
+            <conn input="colorize2.shape" output="ellipse1"/>
+            <conn input="combine1.list1" output="colorize1"/>
+            <conn input="combine1.list3" output="colorize2"/>
+            <conn input="combine1.list7" output="textpath2"/>
+            <conn input="group1.shapes" output="combine1"/>
+            <conn input="combine2.list1" output="count1"/>
+            <conn input="combine2.list2" output="group1"/>
+            <conn input="zip_map1.keys" output="make_strings1"/>
+            <conn input="zip_map1.values" output="combine2"/>
+        </node>
+        <node name="letter4" position="19.00,-12.00" prototype="core.network" renderedChild="zip_map1">
+            <node name="colorize1" position="2.00,5.00" prototype="corevector.colorize">
+                <port name="fill" type="color" value="#797979ff"/>
+            </node>
+            <node name="colorize2" position="3.00,11.00" prototype="corevector.colorize">
+                <port name="fill" type="color" value="#ff0000a2"/>
+            </node>
+            <node name="combine1" position="2.00,14.00" prototype="list.combine"/>
+            <node name="combine2" position="9.00,17.00" prototype="list.combine"/>
+            <node name="count1" position="9.00,9.00" prototype="list.count"/>
+            <node name="ellipse1" position="3.00,10.00" prototype="corevector.ellipse">
+                <port name="width" type="float" value="8.0"/>
+                <port name="height" type="float" value="8.0"/>
+            </node>
+            <node name="group1" position="2.00,15.00" prototype="corevector.group"/>
+            <node name="make_strings1" position="6.00,17.00" prototype="string.make_strings">
+                <port name="string" type="string" value="count,character"/>
+                <port name="separator" type="string" value=","/>
+            </node>
+            <node name="point1" position="3.00,7.00" prototype="corevector.point"/>
+            <node name="textpath1" position="2.00,4.00" prototype="corevector.textpath">
+                <port name="text" type="string" value="a"/>
+                <port name="font_name" type="string" value="SansSerif"/>
+                <port name="font_size" type="float" value="500.0"/>
+            </node>
+            <node name="textpath2" position="6.00,11.00" prototype="corevector.textpath">
+                <port name="font_size" type="float" value="73.0"/>
+                <port name="position" type="point" value="0.00,80.00"/>
+            </node>
+            <node name="zip_map1" position="6.00,20.00" prototype="list.zip_map"/>
+            <port childReference="textpath1.text" description="The input text." label="" name="character" range="value" type="string" value="a" widget="string"/>
+            <port childReference="textpath1.font_name" description="The name of the font." label="" name="font_name" range="value" type="string" value="SansSerif" widget="font"/>
+            <port childReference="textpath1.font_size" description="The size of the font." label="" name="font_size" range="value" type="float" value="500.0" widget="float"/>
+            <conn input="count1.list" output="point1"/>
+            <conn input="textpath2.text" output="count1"/>
+            <conn input="colorize1.shape" output="textpath1"/>
+            <conn input="point1.value" output="colorize1"/>
+            <conn input="ellipse1.position" output="point1"/>
+            <conn input="colorize2.shape" output="ellipse1"/>
+            <conn input="combine1.list1" output="colorize1"/>
+            <conn input="combine1.list3" output="colorize2"/>
+            <conn input="combine1.list7" output="textpath2"/>
+            <conn input="group1.shapes" output="combine1"/>
+            <conn input="combine2.list1" output="count1"/>
+            <conn input="combine2.list2" output="group1"/>
+            <conn input="zip_map1.keys" output="make_strings1"/>
+            <conn input="zip_map1.values" output="combine2"/>
+        </node>
+        <node name="letter5" position="25.00,-12.00" prototype="core.network" renderedChild="zip_map1">
+            <node name="colorize1" position="2.00,5.00" prototype="corevector.colorize">
+                <port name="fill" type="color" value="#797979ff"/>
+            </node>
+            <node name="colorize2" position="3.00,11.00" prototype="corevector.colorize">
+                <port name="fill" type="color" value="#ff0000a2"/>
+            </node>
+            <node name="combine1" position="2.00,14.00" prototype="list.combine"/>
+            <node name="combine2" position="9.00,17.00" prototype="list.combine"/>
+            <node name="count1" position="9.00,9.00" prototype="list.count"/>
+            <node name="ellipse1" position="3.00,10.00" prototype="corevector.ellipse">
+                <port name="width" type="float" value="8.0"/>
+                <port name="height" type="float" value="8.0"/>
+            </node>
+            <node name="group1" position="2.00,15.00" prototype="corevector.group"/>
+            <node name="make_strings1" position="6.00,17.00" prototype="string.make_strings">
+                <port name="string" type="string" value="count,character"/>
+                <port name="separator" type="string" value=","/>
+            </node>
+            <node name="point1" position="3.00,7.00" prototype="corevector.point"/>
+            <node name="textpath1" position="2.00,4.00" prototype="corevector.textpath">
+                <port name="text" type="string" value="a"/>
+                <port name="font_name" type="string" value="CurlzMT"/>
+                <port name="font_size" type="float" value="500.0"/>
+            </node>
+            <node name="textpath2" position="6.00,11.00" prototype="corevector.textpath">
+                <port name="font_size" type="float" value="73.0"/>
+                <port name="position" type="point" value="0.00,80.00"/>
+            </node>
+            <node name="zip_map1" position="6.00,20.00" prototype="list.zip_map"/>
+            <port childReference="textpath1.text" description="The input text." label="" name="character" range="value" type="string" value="a" widget="string"/>
+            <port childReference="textpath1.font_name" description="The name of the font." label="" name="font_name" range="value" type="string" value="CurlzMT" widget="font"/>
+            <port childReference="textpath1.font_size" description="The size of the font." label="" name="font_size" range="value" type="float" value="500.0" widget="float"/>
+            <conn input="count1.list" output="point1"/>
+            <conn input="textpath2.text" output="count1"/>
+            <conn input="colorize1.shape" output="textpath1"/>
+            <conn input="point1.value" output="colorize1"/>
+            <conn input="ellipse1.position" output="point1"/>
+            <conn input="colorize2.shape" output="ellipse1"/>
+            <conn input="combine1.list1" output="colorize1"/>
+            <conn input="combine1.list3" output="colorize2"/>
+            <conn input="combine1.list7" output="textpath2"/>
+            <conn input="group1.shapes" output="combine1"/>
+            <conn input="combine2.list1" output="count1"/>
+            <conn input="combine2.list2" output="group1"/>
+            <conn input="zip_map1.keys" output="make_strings1"/>
+            <conn input="zip_map1.values" output="combine2"/>
+        </node>
+        <node name="letter6" position="22.00,-12.00" prototype="core.network" renderedChild="zip_map1">
+            <node name="colorize1" position="2.00,5.00" prototype="corevector.colorize">
+                <port name="fill" type="color" value="#797979ff"/>
+            </node>
+            <node name="colorize2" position="3.00,11.00" prototype="corevector.colorize">
+                <port name="fill" type="color" value="#ff0000a2"/>
+            </node>
+            <node name="combine1" position="2.00,14.00" prototype="list.combine"/>
+            <node name="combine2" position="9.00,17.00" prototype="list.combine"/>
+            <node name="count1" position="9.00,9.00" prototype="list.count"/>
+            <node name="ellipse1" position="3.00,10.00" prototype="corevector.ellipse">
+                <port name="width" type="float" value="8.0"/>
+                <port name="height" type="float" value="8.0"/>
+            </node>
+            <node name="group1" position="2.00,15.00" prototype="corevector.group"/>
+            <node name="make_strings1" position="6.00,17.00" prototype="string.make_strings">
+                <port name="string" type="string" value="count,character"/>
+                <port name="separator" type="string" value=","/>
+            </node>
+            <node name="point1" position="3.00,7.00" prototype="corevector.point"/>
+            <node name="textpath1" position="2.00,4.00" prototype="corevector.textpath">
+                <port name="text" type="string" value="a"/>
+                <port name="font_name" type="string" value="KohinoorTelugu-Light"/>
+                <port name="font_size" type="float" value="500.0"/>
+            </node>
+            <node name="textpath2" position="6.00,11.00" prototype="corevector.textpath">
+                <port name="font_size" type="float" value="73.0"/>
+                <port name="position" type="point" value="0.00,80.00"/>
+            </node>
+            <node name="zip_map1" position="6.00,20.00" prototype="list.zip_map"/>
+            <port childReference="textpath1.text" description="The input text." label="" name="character" range="value" type="string" value="a" widget="string"/>
+            <port childReference="textpath1.font_name" description="The name of the font." label="" name="font_name" range="value" type="string" value="KohinoorTelugu-Light" widget="font"/>
+            <port childReference="textpath1.font_size" description="The size of the font." label="" name="font_size" range="value" type="float" value="500.0" widget="float"/>
+            <conn input="count1.list" output="point1"/>
+            <conn input="textpath2.text" output="count1"/>
+            <conn input="colorize1.shape" output="textpath1"/>
+            <conn input="point1.value" output="colorize1"/>
+            <conn input="ellipse1.position" output="point1"/>
+            <conn input="colorize2.shape" output="ellipse1"/>
+            <conn input="combine1.list1" output="colorize1"/>
+            <conn input="combine1.list3" output="colorize2"/>
+            <conn input="combine1.list7" output="textpath2"/>
+            <conn input="group1.shapes" output="combine1"/>
+            <conn input="combine2.list1" output="count1"/>
+            <conn input="combine2.list2" output="group1"/>
+            <conn input="zip_map1.keys" output="make_strings1"/>
+            <conn input="zip_map1.values" output="combine2"/>
+        </node>
+        <node name="letter7" position="28.00,-12.00" prototype="core.network" renderedChild="zip_map1">
+            <node name="colorize1" position="2.00,5.00" prototype="corevector.colorize">
+                <port name="fill" type="color" value="#797979ff"/>
+            </node>
+            <node name="colorize2" position="3.00,11.00" prototype="corevector.colorize">
+                <port name="fill" type="color" value="#ff0000a2"/>
+            </node>
+            <node name="combine1" position="2.00,14.00" prototype="list.combine"/>
+            <node name="combine2" position="9.00,17.00" prototype="list.combine"/>
+            <node name="count1" position="9.00,9.00" prototype="list.count"/>
+            <node name="ellipse1" position="3.00,10.00" prototype="corevector.ellipse">
+                <port name="width" type="float" value="8.0"/>
+                <port name="height" type="float" value="8.0"/>
+            </node>
+            <node name="group1" position="2.00,15.00" prototype="corevector.group"/>
+            <node name="make_strings1" position="6.00,17.00" prototype="string.make_strings">
+                <port name="string" type="string" value="count,character"/>
+                <port name="separator" type="string" value=","/>
+            </node>
+            <node name="point1" position="3.00,7.00" prototype="corevector.point"/>
+            <node name="textpath1" position="2.00,4.00" prototype="corevector.textpath">
+                <port name="text" type="string" value="a"/>
+                <port name="font_name" type="string" value="Apple-Chancery"/>
+                <port name="font_size" type="float" value="500.0"/>
+            </node>
+            <node name="textpath2" position="6.00,11.00" prototype="corevector.textpath">
+                <port name="font_size" type="float" value="73.0"/>
+                <port name="position" type="point" value="0.00,80.00"/>
+            </node>
+            <node name="zip_map1" position="6.00,20.00" prototype="list.zip_map"/>
+            <port childReference="textpath1.text" description="The input text." label="" name="character" range="value" type="string" value="a" widget="string"/>
+            <port childReference="textpath1.font_name" description="The name of the font." label="" name="font_name" range="value" type="string" value="Apple-Chancery" widget="font"/>
+            <port childReference="textpath1.font_size" description="The size of the font." label="" name="font_size" range="value" type="float" value="500.0" widget="float"/>
+            <conn input="count1.list" output="point1"/>
+            <conn input="textpath2.text" output="count1"/>
+            <conn input="colorize1.shape" output="textpath1"/>
+            <conn input="point1.value" output="colorize1"/>
+            <conn input="ellipse1.position" output="point1"/>
+            <conn input="colorize2.shape" output="ellipse1"/>
+            <conn input="combine1.list1" output="colorize1"/>
+            <conn input="combine1.list3" output="colorize2"/>
+            <conn input="combine1.list7" output="textpath2"/>
+            <conn input="group1.shapes" output="combine1"/>
+            <conn input="combine2.list1" output="count1"/>
+            <conn input="combine2.list2" output="group1"/>
+            <conn input="zip_map1.keys" output="make_strings1"/>
+            <conn input="zip_map1.values" output="combine2"/>
+        </node>
+        <node name="lookup1" position="7.00,3.00" prototype="data.lookup">
+            <port name="key" type="string" value="character"/>
+        </node>
+        <node name="make_strings1" position="7.00,-14.00" prototype="string.make_strings">
+            <port name="string" type="string" value="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!?@#$%&amp;+"/>
+            <port name="separator" type="string" value=""/>
+        </node>
+        <node name="polygon1" position="31.00,-13.00" prototype="corevector.polygon">
+            <port name="radius" type="float" value="180.0"/>
+            <port name="align" type="boolean" value="true"/>
+        </node>
+        <node name="polygon2" position="34.00,-13.00" prototype="corevector.polygon">
+            <port name="radius" type="float" value="180.0"/>
+            <port name="sides" type="int" value="5"/>
+            <port name="align" type="boolean" value="true"/>
+        </node>
+        <node name="rect1" position="4.00,14.00" prototype="corevector.rect">
+            <port name="width" type="float" value="7200.0"/>
+            <port name="height" type="float" value="6500.0"/>
+        </node>
+        <node name="rect2" position="-4.00,10.00" prototype="corevector.rect">
+            <port name="width" type="float" value="500.0"/>
+            <port name="height" type="float" value="500.0"/>
+        </node>
+        <node name="reformat" position="7.00,5.00" prototype="core.network" renderedChild="group1">
+            <node name="centroid1" position="-10.00,8.00" prototype="corevector.centroid"/>
+            <node name="colorize1" position="-14.00,9.00" prototype="corevector.colorize"/>
+            <node name="colorize2" position="-4.00,12.00" prototype="corevector.colorize">
+                <port name="strokeWidth" type="float" value="2.0"/>
+            </node>
+            <node name="combine1" position="-6.00,15.00" prototype="list.combine"/>
+            <node name="dot_color" position="-3.00,2.00" prototype="color.color">
+                <port name="color" type="color" value="#4242425a"/>
+            </node>
+            <node name="dot_size" position="-6.00,2.00" prototype="math.integer">
+                <port name="value" type="int" value="32"/>
+            </node>
+            <node comment="Take all but the last item of a list" name="drop_last" outputType="list" position="-10.00,7.00" prototype="core.network" renderedChild="rest1">
+                <node name="null1" position="12.00,14.00" prototype="corevector.null"/>
+                <node name="rest1" position="12.00,16.00" prototype="list.rest"/>
+                <node name="shift1" position="12.00,15.00" prototype="list.shift">
+                    <port name="amount" type="int" value="-1"/>
+                </node>
+                <port childReference="null1.shape" description="The input shape." label="" name="list" range="list" type="geometry" widget="none"/>
+                <conn input="shift1.list" output="null1"/>
+                <conn input="rest1.list" output="shift1"/>
+            </node>
+            <node name="ellipse1" position="-7.00,10.00" prototype="corevector.ellipse"/>
+            <node name="first1" position="-13.00,6.00" prototype="list.first"/>
+            <node name="group1" position="-6.00,16.00" prototype="corevector.group"/>
+            <node name="last1" position="-1.00,6.00" prototype="list.last"/>
+            <node name="make_point1" position="2.00,6.00" prototype="corevector.make_point"/>
+            <node name="offset" position="1.00,2.00" prototype="math.integer">
+                <port name="value" type="int" value="120"/>
+            </node>
+            <node name="rest1" position="-10.00,6.00" prototype="list.rest"/>
+            <node name="shape" position="-10.00,2.00" prototype="corevector.null"/>
+            <node name="shape_color" position="-14.00,2.00" prototype="color.color">
+                <port name="color" type="color" value="#b4b4b4ff"/>
+            </node>
+            <node name="show_count" position="8.00,2.00" prototype="math.boolean"/>
+            <node name="switch1" position="-1.00,12.00" prototype="list.switch"/>
+            <node name="translate1" position="-1.00,10.00" prototype="corevector.translate"/>
+            <node name="ungroup1" position="-10.00,3.00" prototype="corevector.ungroup"/>
+            <port childReference="shape.shape" description="The input shape." label="" name="shape" range="value" type="geometry" widget="none"/>
+            <port childReference="shape_color.color" description="" label="" name="character color" range="value" type="color" value="#b4b4b4ff" widget="color"/>
+            <port childReference="dot_size.value" description="" label="" name="dot size" range="value" type="int" value="32" widget="int"/>
+            <port childReference="offset.value" description="" label="" name="offset" range="value" type="int" value="120" widget="int"/>
+            <port childReference="dot_color.color" description="" label="" name="dot color" range="value" type="color" value="#4242425a" widget="color"/>
+            <port childReference="show_count.value" description="" label="" name="show count" range="value" type="boolean" value="false" widget="toggle"/>
+            <conn input="first1.list" output="ungroup1"/>
+            <conn input="last1.list" output="ungroup1"/>
+            <conn input="rest1.list" output="ungroup1"/>
+            <conn input="drop_last.list" output="rest1"/>
+            <conn input="colorize1.shape" output="first1"/>
+            <conn input="ungroup1.shape" output="shape"/>
+            <conn input="ellipse1.width" output="dot_size"/>
+            <conn input="ellipse1.height" output="dot_size"/>
+            <conn input="centroid1.shape" output="drop_last"/>
+            <conn input="ellipse1.position" output="centroid1"/>
+            <conn input="colorize1.fill" output="shape_color"/>
+            <conn input="colorize2.shape" output="ellipse1"/>
+            <conn input="colorize2.fill" output="dot_color"/>
+            <conn input="combine1.list1" output="colorize1"/>
+            <conn input="combine1.list2" output="colorize2"/>
+            <conn input="group1.shapes" output="combine1"/>
+            <conn input="translate1.shape" output="last1"/>
+            <conn input="make_point1.y" output="offset"/>
+            <conn input="translate1.translate" output="make_point1"/>
+            <conn input="switch1.index" output="show_count"/>
+            <conn input="switch1.input2" output="translate1"/>
+            <conn input="combine1.list7" output="switch1"/>
+        </node>
+        <node name="scale1" position="-1.00,11.00" prototype="corevector.scale">
+            <port name="scale" type="point" value="90.00,90.00"/>
+        </node>
+        <node name="shape" position="31.00,-12.00" prototype="core.network" renderedChild="zip_map1">
+            <node name="align1" position="2.00,4.00" prototype="corevector.align">
+                <port name="valign" type="string" value="bottom"/>
+            </node>
+            <node name="colorize1" position="2.00,5.00" prototype="corevector.colorize">
+                <port name="fill" type="color" value="#797979ff"/>
+            </node>
+            <node name="colorize2" position="3.00,11.00" prototype="corevector.colorize">
+                <port name="fill" type="color" value="#ff0000a2"/>
+            </node>
+            <node name="combine1" position="2.00,14.00" prototype="list.combine"/>
+            <node name="combine2" position="9.00,17.00" prototype="list.combine"/>
+            <node name="count1" position="9.00,9.00" prototype="list.count"/>
+            <node name="ellipse1" position="3.00,10.00" prototype="corevector.ellipse">
+                <port name="width" type="float" value="8.0"/>
+                <port name="height" type="float" value="8.0"/>
+            </node>
+            <node name="group1" position="2.00,15.00" prototype="corevector.group"/>
+            <node name="make_strings1" position="6.00,17.00" prototype="string.make_strings">
+                <port name="string" type="string" value="count,character"/>
+                <port name="separator" type="string" value=","/>
+            </node>
+            <node name="point1" position="3.00,7.00" prototype="corevector.point"/>
+            <node name="shape" position="2.00,3.00" prototype="corevector.null"/>
+            <node name="textpath2" position="6.00,11.00" prototype="corevector.textpath">
+                <port name="font_size" type="float" value="73.0"/>
+                <port name="position" type="point" value="0.00,80.00"/>
+            </node>
+            <node name="zip_map1" position="6.00,20.00" prototype="list.zip_map"/>
+            <port childReference="shape.shape" description="The input shape." label="" name="shape" range="value" type="geometry" widget="none"/>
+            <conn input="count1.list" output="point1"/>
+            <conn input="textpath2.text" output="count1"/>
+            <conn input="point1.value" output="colorize1"/>
+            <conn input="ellipse1.position" output="point1"/>
+            <conn input="colorize2.shape" output="ellipse1"/>
+            <conn input="combine1.list1" output="colorize1"/>
+            <conn input="combine1.list3" output="colorize2"/>
+            <conn input="combine1.list7" output="textpath2"/>
+            <conn input="group1.shapes" output="combine1"/>
+            <conn input="combine2.list1" output="count1"/>
+            <conn input="combine2.list2" output="group1"/>
+            <conn input="zip_map1.keys" output="make_strings1"/>
+            <conn input="zip_map1.values" output="combine2"/>
+            <conn input="align1.shape" output="shape"/>
+            <conn input="colorize1.shape" output="align1"/>
+        </node>
+        <node name="shape1" position="34.00,-12.00" prototype="core.network" renderedChild="zip_map1">
+            <node name="align1" position="2.00,4.00" prototype="corevector.align">
+                <port name="valign" type="string" value="bottom"/>
+            </node>
+            <node name="colorize1" position="2.00,5.00" prototype="corevector.colorize">
+                <port name="fill" type="color" value="#797979ff"/>
+            </node>
+            <node name="colorize2" position="3.00,11.00" prototype="corevector.colorize">
+                <port name="fill" type="color" value="#ff0000a2"/>
+            </node>
+            <node name="combine1" position="2.00,14.00" prototype="list.combine"/>
+            <node name="combine2" position="9.00,17.00" prototype="list.combine"/>
+            <node name="count1" position="9.00,9.00" prototype="list.count"/>
+            <node name="ellipse1" position="3.00,10.00" prototype="corevector.ellipse">
+                <port name="width" type="float" value="8.0"/>
+                <port name="height" type="float" value="8.0"/>
+            </node>
+            <node name="group1" position="2.00,15.00" prototype="corevector.group"/>
+            <node name="make_strings1" position="6.00,17.00" prototype="string.make_strings">
+                <port name="string" type="string" value="count,character"/>
+                <port name="separator" type="string" value=","/>
+            </node>
+            <node name="point1" position="3.00,7.00" prototype="corevector.point"/>
+            <node name="shape" position="2.00,3.00" prototype="corevector.null"/>
+            <node name="textpath2" position="6.00,11.00" prototype="corevector.textpath">
+                <port name="font_size" type="float" value="73.0"/>
+                <port name="position" type="point" value="0.00,80.00"/>
+            </node>
+            <node name="zip_map1" position="6.00,20.00" prototype="list.zip_map"/>
+            <port childReference="shape.shape" description="The input shape." label="" name="shape" range="value" type="geometry" widget="none"/>
+            <conn input="count1.list" output="point1"/>
+            <conn input="textpath2.text" output="count1"/>
+            <conn input="point1.value" output="colorize1"/>
+            <conn input="ellipse1.position" output="point1"/>
+            <conn input="colorize2.shape" output="ellipse1"/>
+            <conn input="combine1.list1" output="colorize1"/>
+            <conn input="combine1.list3" output="colorize2"/>
+            <conn input="combine1.list7" output="textpath2"/>
+            <conn input="group1.shapes" output="combine1"/>
+            <conn input="combine2.list1" output="count1"/>
+            <conn input="combine2.list2" output="group1"/>
+            <conn input="zip_map1.keys" output="make_strings1"/>
+            <conn input="zip_map1.values" output="combine2"/>
+            <conn input="align1.shape" output="shape"/>
+            <conn input="colorize1.shape" output="align1"/>
+        </node>
+        <node name="slice1" position="-1.00,9.00" prototype="list.slice">
+            <port name="size" type="int" value="1"/>
+        </node>
+        <node name="sort1" position="7.00,1.00" prototype="list.sort">
+            <port name="key" type="string" value="count"/>
+        </node>
+        <node name="stack1" position="7.00,13.00" prototype="corevector.stack">
+            <port name="direction" type="string" value="n"/>
+            <port name="margin" type="float" value="300.0"/>
+        </node>
+        <node name="subtract1" position="-1.00,4.00" prototype="math.subtract">
+            <port name="value2" type="float" value="1.0"/>
+        </node>
+        <node name="textpath1" position="10.00,9.00" prototype="corevector.textpath">
+            <port name="text" type="string" value="Character Complexity"/>
+            <port name="font_size" type="float" value="600.0"/>
+        </node>
+        <node name="translate1" position="7.00,9.00" prototype="corevector.translate"/>
+        <conn input="letter.character" output="make_strings1"/>
+        <conn input="translate1.translate" output="grid_plus"/>
+        <conn input="combine1.list1" output="letter"/>
+        <conn input="letter1.character" output="make_strings1"/>
+        <conn input="combine1.list2" output="letter1"/>
+        <conn input="letter2.character" output="make_strings1"/>
+        <conn input="combine1.list3" output="letter2"/>
+        <conn input="letter3.character" output="make_strings1"/>
+        <conn input="group1.shapes" output="translate1"/>
+        <conn input="combine2.list1" output="group1"/>
+        <conn input="stack1.shapes" output="combine2"/>
+        <conn input="combine1.list4" output="letter3"/>
+        <conn input="letter4.character" output="make_strings1"/>
+        <conn input="combine1.list5" output="letter4"/>
+        <conn input="letter5.character" output="make_strings1"/>
+        <conn input="letter6.character" output="make_strings1"/>
+        <conn input="combine1.list7" output="letter5"/>
+        <conn input="combine1.list6" output="letter6"/>
+        <conn input="letter7.character" output="make_strings1"/>
+        <conn input="combine3.list1" output="letter7"/>
+        <conn input="combine4.list1" output="combine1"/>
+        <conn input="combine4.list7" output="combine3"/>
+        <conn input="distinct1.list" output="combine4"/>
+        <conn input="shape.shape" output="polygon1"/>
+        <conn input="shape1.shape" output="polygon2"/>
+        <conn input="lookup1.list" output="sort1"/>
+        <conn input="count1.list" output="sort1"/>
+        <conn input="filter_data1.data" output="distinct1"/>
+        <conn input="sort1.list" output="filter_data1"/>
+        <conn input="colorize1.shape" output="rect1"/>
+        <conn input="combine5.list1" output="colorize1"/>
+        <conn input="group2.shapes" output="stack1"/>
+        <conn input="align1.shape" output="group2"/>
+        <conn input="combine5.list3" output="align1"/>
+        <conn input="colorize2.shape" output="textpath1"/>
+        <conn input="combine2.list7" output="colorize2"/>
+        <conn input="align2.shape" output="slice1"/>
+        <conn input="colorize3.shape" output="rect2"/>
+        <conn input="combine6.list1" output="colorize3"/>
+        <conn input="scale1.shape" output="align2"/>
+        <conn input="floor1.value" output="divide1"/>
+        <conn input="combine3.list5" output="shape1"/>
+        <conn input="combine3.list4" output="shape"/>
+        <conn input="reformat.shape" output="lookup1"/>
+        <conn input="combine6.list7" output="scale1"/>
+        <conn input="subtract1.value1" output="frame1"/>
+        <conn input="divide1.value1" output="subtract1"/>
+        <conn input="bounds.value" output="floor1"/>
+        <conn input="slice1.start_index" output="bounds"/>
+        <conn input="slice1.list" output="add_one_two"/>
+        <conn input="add_one_two.shape list" output="reformat"/>
+        <conn input="translate1.shape" output="reformat"/>
+        <conn input="grid_plus.limit" output="count1"/>
+    </node>
+</ndbx>
