@@ -1,0 +1,4 @@
+Nome: Fátima Finizola
+Link: https://www.instagram.com/fafilete/
+Descrição: Um feixe de linhas descreve a trajetória de uma circunferência em 100 passos.
+Plataforma: NodeBox 3

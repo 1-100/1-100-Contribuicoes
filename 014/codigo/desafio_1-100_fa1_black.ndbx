@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ndbx formatVersion="21" type="file" uuid="32e8cca2-9641-4c2f-8ec5-72db6d13c447">
+    <property name="canvasHeight" value="500"/>
+    <property name="canvasWidth" value="500"/>
+    <property name="canvasX" value="0"/>
+    <property name="canvasY" value="0"/>
+    <node name="root" prototype="core.network" renderedChild="combine1">
+        <node name="colorize1" position="4.00,9.00" prototype="corevector.colorize">
+            <port name="fill" type="color" value="#ffffffff"/>
+            <port name="stroke" type="color" value="#ffffffff"/>
+            <port name="strokeWidth" type="float" value="1.0"/>
+        </node>
+        <node name="combine1" position="0.00,11.00" prototype="list.combine"/>
+        <node name="coordinates1" position="6.00,3.00" prototype="math.coordinates">
+            <port name="distance" type="float" value="250.0"/>
+        </node>
+        <node name="frame1" position="9.00,-1.00" prototype="core.frame"/>
+        <node name="grid1" position="5.00,-1.00" prototype="corevector.grid">
+            <port name="width" type="float" value="500.0"/>
+            <port name="height" type="float" value="500.0"/>
+        </node>
+        <node name="line1" position="3.00,7.00" prototype="corevector.line"/>
+        <node name="multiply1" position="9.00,1.00" prototype="math.multiply">
+            <port name="value1" type="float" value="360.0"/>
+            <port name="value2" type="float" value="3.6"/>
+        </node>
+        <node name="rect1" position="0.00,9.00" prototype="corevector.rect">
+            <port name="width" type="float" value="500.0"/>
+            <port name="height" type="float" value="500.0"/>
+        </node>
+        <conn input="line1.point1" output="grid1"/>
+        <conn input="line1.point2" output="coordinates1"/>
+        <conn input="coordinates1.angle" output="multiply1"/>
+        <conn input="multiply1.value1" output="frame1"/>
+        <conn input="colorize1.shape" output="line1"/>
+        <conn input="combine1.list1" output="rect1"/>
+        <conn input="combine1.list2" output="colorize1"/>
+    </node>
+</ndbx>
