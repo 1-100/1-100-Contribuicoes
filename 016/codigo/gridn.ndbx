@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ndbx formatVersion="21" type="file" uuid="49960e40-c453-4f82-a762-c445504caf70">
+    <property name="canvasHeight" value="500"/>
+    <property name="canvasWidth" value="500"/>
+    <property name="canvasX" value="0"/>
+    <property name="canvasY" value="0"/>
+    <node name="root" prototype="core.network" renderedChild="combine1">
+        <node name="colorize7" position="84.00,1.00" prototype="corevector.colorize">
+            <port name="fill" type="color" value="#ffffffff"/>
+        </node>
+        <node name="combine1" position="87.00,5.00" prototype="list.combine"/>
+        <node name="frame10" position="84.00,-7.00" prototype="core.frame"/>
+        <node name="frame11" position="87.00,-5.00" prototype="core.frame"/>
+        <node name="frame9" position="91.00,-7.00" prototype="core.frame"/>
+        <node name="grid2" position="91.00,-2.00" prototype="corevector.grid">
+            <port name="columns" type="int" value="1"/>
+            <port name="rows" type="int" value="1"/>
+            <port name="width" type="float" value="450.0"/>
+            <port name="height" type="float" value="450.0"/>
+        </node>
+        <node name="pick6" position="84.00,-3.00" prototype="list.pick">
+            <port name="amount" type="int" value="100"/>
+            <port name="seed" type="int" value="22"/>
+        </node>
+        <node name="random_character5" position="84.00,-5.00" prototype="string.random_character">
+            <port name="characters" type="string" value="0123456789"/>
+            <port name="amount" type="int" value="100"/>
+            <port name="seed" type="int" value="13"/>
+        </node>
+        <node name="range8" position="91.00,-5.00" prototype="math.range">
+            <port name="end" type="float" value="101.0"/>
+            <port name="step" type="float" value="101.0"/>
+        </node>
+        <node name="rect1" position="84.00,3.00" prototype="corevector.rect">
+            <port name="width" type="float" value="500.0"/>
+            <port name="height" type="float" value="500.0"/>
+        </node>
+        <node name="textpath5" position="84.00,-1.00" prototype="corevector.textpath">
+            <port name="font_name" type="string" value="SourceCodePro-Bold"/>
+            <port name="font_size" type="float" value="6.0"/>
+        </node>
+        <node name="translate3" position="88.00,2.00" prototype="corevector.translate"/>
+        <conn input="range8.start" output="frame9"/>
+        <conn input="textpath5.text" output="pick6"/>
+        <conn input="pick6.list" output="random_character5"/>
+        <conn input="random_character5.amount" output="frame10"/>
+        <conn input="grid2.columns" output="range8"/>
+        <conn input="grid2.rows" output="range8"/>
+        <conn input="translate3.translate" output="grid2"/>
+        <conn input="pick6.amount" output="frame11"/>
+        <conn input="colorize7.shape" output="textpath5"/>
+        <conn input="translate3.shape" output="colorize7"/>
+        <conn input="pick6.seed" output="frame11"/>
+        <conn input="combine1.list1" output="rect1"/>
+        <conn input="combine1.list2" output="translate3"/>
+    </node>
+</ndbx>
