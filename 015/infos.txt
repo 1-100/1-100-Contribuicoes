@@ -1,0 +1,4 @@
+Nome: Júnior Morimoto
+Link: instagram.com/moorimoto
+Descrição: Divide o espaço da tela em colunas com elipses de unidades e linhas de dezenas. As linhas são coloridas em escala de cinza, atribuindo um tom diferente para cada dezena.
+Plataforma: Processing
