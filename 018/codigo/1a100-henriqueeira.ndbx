@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ndbx formatVersion="21" type="file" uuid="739219bc-ec4a-4dca-838e-a02483677ef9">
+    <property name="canvasHeight" value="500"/>
+    <property name="canvasWidth" value="500"/>
+    <property name="canvasX" value="0"/>
+    <property name="canvasY" value="0"/>
+    <node name="root" prototype="core.network" renderedChild="colorize2">
+        <node name="GridBaixo1" position="33.00,0.00" prototype="corevector.grid">
+            <port name="columns" type="int" value="25"/>
+            <port name="rows" type="int" value="1"/>
+            <port name="width" type="float" value="500.0"/>
+            <port name="height" type="float" value="1.0"/>
+            <port name="position" type="point" value="0.00,-250.00"/>
+        </node>
+        <node name="GridDireita1" position="25.00,0.00" prototype="corevector.grid">
+            <port name="columns" type="int" value="1"/>
+            <port name="rows" type="int" value="25"/>
+            <port name="width" type="float" value="1.0"/>
+            <port name="height" type="float" value="500.0"/>
+            <port name="position" type="point" value="-250.00,0.00"/>
+        </node>
+        <node name="GridEsquerda1" position="21.00,0.00" prototype="corevector.grid">
+            <port name="columns" type="int" value="1"/>
+            <port name="rows" type="int" value="25"/>
+            <port name="width" type="float" value="1.0"/>
+            <port name="height" type="float" value="500.0"/>
+            <port name="position" type="point" value="250.00,0.00"/>
+        </node>
+        <node name="GridTopo1" position="29.00,0.00" prototype="corevector.grid">
+            <port name="columns" type="int" value="25"/>
+            <port name="rows" type="int" value="1"/>
+            <port name="width" type="float" value="500.0"/>
+            <port name="height" type="float" value="1.0"/>
+            <port name="position" type="point" value="0.00,250.00"/>
+        </node>
+        <node name="colorize2" position="27.00,6.00" prototype="corevector.colorize"/>
+        <node name="combine2" position="27.00,4.00" prototype="list.combine"/>
+        <node name="connect2" position="27.00,5.00" prototype="corevector.connect"/>
+        <node name="frame2" position="27.00,-5.00" prototype="core.frame"/>
+        <node name="multiply5" position="33.00,-2.00" prototype="math.multiply">
+            <port name="value2" type="float" value="31.0"/>
+        </node>
+        <node name="multiply6" position="21.00,-2.00" prototype="math.multiply">
+            <port name="value2" type="float" value="2.0"/>
+        </node>
+        <node name="multiply7" position="25.00,-2.00" prototype="math.multiply">
+            <port name="value2" type="float" value="17.0"/>
+        </node>
+        <node name="multiply8" position="29.00,-2.00" prototype="math.multiply">
+            <port name="value2" type="float" value="23.0"/>
+        </node>
+        <node name="pick5" position="33.00,1.00" prototype="list.pick">
+            <port name="amount" type="int" value="1"/>
+        </node>
+        <node name="pick6" position="29.00,1.00" prototype="list.pick">
+            <port name="amount" type="int" value="1"/>
+        </node>
+        <node name="pick7" position="25.00,1.00" prototype="list.pick">
+            <port name="amount" type="int" value="1"/>
+        </node>
+        <node name="pick8" position="21.00,1.00" prototype="list.pick">
+            <port name="amount" type="int" value="1"/>
+        </node>
+        <conn input="pick8.list" output="GridEsquerda1"/>
+        <conn input="pick7.list" output="GridDireita1"/>
+        <conn input="pick6.list" output="GridTopo1"/>
+        <conn input="pick5.list" output="GridBaixo1"/>
+        <conn input="combine2.list1" output="pick8"/>
+        <conn input="combine2.list4" output="pick5"/>
+        <conn input="colorize2.shape" output="connect2"/>
+        <conn input="combine2.list3" output="pick7"/>
+        <conn input="combine2.list2" output="pick6"/>
+        <conn input="multiply6.value1" output="frame2"/>
+        <conn input="multiply7.value1" output="frame2"/>
+        <conn input="multiply8.value1" output="frame2"/>
+        <conn input="multiply5.value1" output="frame2"/>
+        <conn input="pick8.seed" output="multiply6"/>
+        <conn input="pick7.seed" output="multiply7"/>
+        <conn input="pick6.seed" output="multiply8"/>
+        <conn input="pick5.seed" output="multiply5"/>
+        <conn input="connect2.points" output="combine2"/>
+    </node>
+</ndbx>

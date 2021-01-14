@@ -1,0 +1,4 @@
+Nome: Henrique Eira
+Link: www.henriqueeira.com / Insta: @heeeira
+Descrição: Quatro pontos são selecionados e conectados para formar um polígono. Cada ponto é selecionado aleatoriamente entre 25 possibilidades em cada um dos quatro lados da composição. A randomização produz, potencialmente, 100 polígonos diferentes.
+Plataforma: NodeBox
