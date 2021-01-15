@@ -2,3 +2,6 @@
 .png
 .jpg
 .gif
+
+# Mac
+.DS_Store 
