@@ -1,0 +1,4 @@
+Nome: Henrique Eira
+Link: www.henriqueeira.com / Insta: @heeeira
+Descrição: O código cria um grid com 100 visualizações do coronavírus que são diminuídas e, uma a uma, eliminadas em ordem randômica. Aos poucos, revela-se a mensagem de fundo: VACINA JÁ!
+Plataforma: NodeBox
