@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ndbx formatVersion="21" type="file" uuid="b429e8b9-8720-416d-8d4b-57743863d38e">
+    <property name="canvasHeight" value="500"/>
+    <property name="canvasWidth" value="500"/>
+    <property name="canvasX" value="0"/>
+    <property name="canvasY" value="0"/>
+    <node name="root" prototype="core.network" renderedChild="copy2">
+        <node name="colorize1" position="8.00,6.00" prototype="corevector.colorize">
+            <port name="fill" type="color" value="#00000019"/>
+            <port name="strokeWidth" type="float" value="0.1"/>
+        </node>
+        <node name="copy1" position="8.00,4.00" prototype="corevector.copy">
+            <port name="copies" type="int" value="30"/>
+            <port name="translate" type="point" value="5.00,0.00"/>
+            <port name="rotate" type="float" value="3.0"/>
+            <port name="scale" type="point" value="25.00,25.00"/>
+        </node>
+        <node name="copy2" position="5.00,8.00" prototype="corevector.copy">
+            <port name="copies" type="int" value="12"/>
+            <port name="rotate" type="float" value="30.0"/>
+        </node>
+        <node name="frame1" position="13.00,-2.00" prototype="core.frame"/>
+        <node name="group1" position="5.00,6.00" prototype="corevector.group"/>
+        <node name="multiply1" position="13.00,2.00" prototype="math.multiply">
+            <port name="value2" type="float" value="0.1"/>
+        </node>
+        <node name="rect1" position="11.00,4.00" prototype="corevector.rect">
+            <port name="width" type="float" value="15.0"/>
+            <port name="height" type="float" value="15.0"/>
+        </node>
+        <node name="wave1" position="13.00,0.00" prototype="math.wave">
+            <port name="min" type="float" value="1.0"/>
+            <port name="period" type="float" value="1.0"/>
+            <port name="type" type="string" value="sawtooth"/>
+        </node>
+        <conn input="colorize1.shape" output="rect1"/>
+        <conn input="multiply1.value1" output="wave1"/>
+        <conn input="rect1.width" output="multiply1"/>
+        <conn input="rect1.height" output="multiply1"/>
+        <conn input="copy1.shape" output="colorize1"/>
+        <conn input="copy2.shape" output="group1"/>
+        <conn input="group1.shapes" output="copy1"/>
+        <conn input="copy1.rotate" output="wave1"/>
+        <conn input="wave1.max" output="frame1"/>
+    </node>
+</ndbx>

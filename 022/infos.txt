@@ -1,0 +1,4 @@
+Nome: Mandu
+Link: https://mandu.tv/
+Descrição: Retangulos com rotação, largura e altura recebendo o mesmo valor. A somatória de todos eles forma um kaleidoscópio.
+Plataforma: Nodebox 3
