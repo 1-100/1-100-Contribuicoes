@@ -1,0 +1,5 @@
+Nome: Advan Shumiski
+Link: HTTP://WWW.SHUMISKI.COM
+Link: HTTP://INSTAGRAM.COM/SHUMISKI
+Descrição: Uma mistura de dithering e ondas senoidais. Apesar da contagem de 1-100 ser a base que torna possível todos os movimentos contidos nessa proposta, coloco em jogo (como faço constantemente em meu trabalho) nossa percepção sobre o tempo. O trabalho conta de 1-100, mas seus limites são visíveis?
+Plataforma: Processing
