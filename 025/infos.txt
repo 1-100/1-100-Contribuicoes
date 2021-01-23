@@ -1,0 +1,4 @@
+Nome: Rodrigo Junqueira
+Link: www.instagram.com/rodjunart
+Descrição: Um quadrado se transforma em um círculo, enquanto vaga aleatoriamente pelos espaços vagos do canvas, em 100 passos.
+Plataforma: p5.js
