@@ -1,0 +1,5 @@
+Nome: John Cartan
+Link: https://www.instagram.com/john.cartan/
+Descrição: Amassar e entortar um fio 100 vezes para formar o número 100.
+Description: Bend and twist a wire 100 times to form "100".
+Plataforma: Nodebox 3
