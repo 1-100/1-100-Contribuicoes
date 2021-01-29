@@ -1,0 +1,5 @@
+Nome: Caluã de Lacerda Pataca / Preface
+Link: www.caluapataca.com
+Link: www.preface.com.br
+Descrição: Pegue uma imagem. Divida seus lados em n partes, formando n² quadrados, n indo de 1 a 100. A cada rodada, pegue n quadrados aleatoriamente e cole-os por cima da imagem em suas posições originais. Vá empilhando imagens, deixando as instâncias anteriores cada vez mais borradas, cada vez mais escuras.
+Plataforma: p5js
