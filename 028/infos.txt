@@ -1,0 +1,5 @@
+Nome: Marlon Amorim Tenório
+Link: https://instagram.com/codingp5
+Descrição: Cada ponto vazado emite um feixe de 10 linhas.
+Cada ponto inteiro recebe um feixe de 10 linhas. 10 x 10. E uma estrela no final.
+Plataforma: p5.js
