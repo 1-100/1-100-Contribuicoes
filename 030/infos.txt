@@ -1,0 +1,5 @@
+Felipe Turcheti
+Link: https://felipeturcheti.com/
+Descrição: Bolinhas vão preenchendo o espaço. Por trás da visualização, está um conjunto de 100 pontos gerados com Poisson Disc Sampling. E o desenho desses pontos, de 1 a 100, dá pistas do funcionamento desse algoritmo.
+Plataforma: canvas-sketch
+Plataforma-Link: https://github.com/mattdesl/canvas-sketch

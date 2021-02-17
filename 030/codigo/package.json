@@ -1,0 +1,15 @@
+{
+  "name": "1-100-poisson-disc",
+  "version": "1.0.0",
+  "description": "Contando de 1 a 100 usando o algoritmo Poisson Disc Sampling",
+  "main": "index.js",
+  "scripts": {
+    "build": "canvas-sketch index.js --open"
+  },
+  "author": "Felipe Turcheti",
+  "license": "ISC",
+  "dependencies": {
+    "canvas-sketch": "^0.7.1",
+    "poisson-disk-sampling": "^2.2.2"
+  }
+}
