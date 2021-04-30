@@ -1,0 +1,4 @@
+Nome: Mariana Leal
+Link: www.marileal.github.io
+Descrição: Um traço caligráfico é feito ao passar por cem posições do mouse armazenadas.
+Plataforma: Processing
