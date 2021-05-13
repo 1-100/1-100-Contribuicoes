@@ -1,0 +1,4 @@
+Nome: Alexandre B A Villares
+Link: http://abav.lugaralgum.com
+Descrição: Mostra sete vértices regularmente espaçados em um círculo (formando um heptágono) e em seguida os 99 polígonos convexos que podem ser desenhados com esses vértices, começando com triângulos e terminando com o próprio heptágono inicial.
+Plataforma: Processing modo Python
