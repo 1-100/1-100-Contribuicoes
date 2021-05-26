@@ -1,0 +1,4 @@
+Nome: Guilherme Vieira
+Link: https://guilhermevieira.info
+Descrição: Exibe de 1 a 100 estrelas visíveis no céu a partir de São Paulo no dia 25/05/2021 as 19:30 de acordo com o site https://in-the-sky.org/ em ordem aleatória desenhadas a partir do eixo leste. Esta contagem foi desenvolvida especialmente para o evento Noite de Processing sobre esse projeto.
+Plataforma: NodeBox 3
