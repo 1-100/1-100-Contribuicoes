@@ -1,0 +1,15 @@
+{
+  "name": "1-100-random-counter",
+  "version": "1.0.0",
+  "description": "Indo de 1 a 100 por um caminho aleatório",
+  "main": "index.js",
+  "scripts": {
+    "build": "canvas-sketch index.js --open"
+  },
+  "author": "Felipe Turcheti",
+  "license": "ISC",
+  "dependencies": {
+    "canvas-sketch": "^0.7.1",
+    "canvas-sketch-util": "^1.10.0"
+  }
+}

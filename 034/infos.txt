@@ -1,0 +1,5 @@
+Felipe Turcheti
+Link: https://felipeturcheti.com/
+Descrição: A contagem é feita por barras verticais vão crescendo dentro de um grid. Uma barra representa as unidades, outra as dezenas e a última, a centena. Homenagem ao "Grid Based Clock Screensaver", de Michael C. Place e G. Delobel a partir do trabalho de Sleepatwork.
+Plataforma: canvas-sketch
+Plataforma-Link: https://github.com/mattdesl/canvas-sketch

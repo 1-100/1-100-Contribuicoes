@@ -1,0 +1,5 @@
+Felipe Turcheti
+Link: https://felipeturcheti.com/
+Descrição: Indo de 1 a 100 por um caminho aleatório. A aleatoriedade é uma importante ferramenta para exploração e descoberta no desenvolvimento de arte generativa. Aqui essa ferramenta se torna a protagonista e o resultado é, na prática, uma espécie de debug art.
+Plataforma: canvas-sketch
+Plataforma-Link: https://github.com/mattdesl/canvas-sketch
