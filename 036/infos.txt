@@ -1,0 +1,4 @@
+﻿Nome: Vinícius Ladivez
+Link: https://www.instagram.com/vladivez/
+Descrição: Contagem de 1 a 100 num sistema de numeração quaternário. Cada dígito é um triângulo retângulo de 250 x 250 pixels, e seu valor é baseado no ângulo de rotação (0° = 0,90° = 1, 180° = 2 e 270° = 3).
+Plataforma: Processing	
