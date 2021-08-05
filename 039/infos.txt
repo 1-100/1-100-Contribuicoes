@@ -1,0 +1,4 @@
+Nome: Vamoss
+Link: https://openprocessing.org/sketch/1241518
+Descrição: Códigos Arcturianos - Ascensão é uma investigação sobre a  geometria presente nos códigos Arcturianos. Estas imagens foram criadas originalmente com intenção de cura, ao observar estas geometrias consideradas sagradas, há um convite para alcançar altos níveis consciência, neste caso a Ascensão.
+Plataforma: p5.js
