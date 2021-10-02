@@ -1,0 +1,4 @@
+Nome: Gulherme Vieira
+Link: https://guilhermevieira.info
+Descrição: Um círculo é desfocado 100 vezes.
+Plataforma: Processing
