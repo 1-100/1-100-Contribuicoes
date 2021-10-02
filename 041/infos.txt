@@ -1,0 +1,4 @@
+Nome: Gulherme Vieira
+Link: https://guilhermevieira.info
+Descrição: 100 artigos aleatórios da Wikipedia, um para cada número.
+Plataforma: p5.js
