@@ -1,11 +1,12 @@
-IntList pontosx = new IntList(); 
-IntList pontosy = new IntList();; 
+import java.util.Collections;
 
+ArrayList<PVector> pontosrec = new ArrayList();
+PVector pontos;
 
-int intervalo; 
-int inicio; 
+int intervalo;
+int inicio;
 
-int grad = 0; 
+int grad = 0;
 
 
 void setup() {
@@ -13,7 +14,8 @@ void setup() {
   size(500, 500);
   strokeWeight(1);
   stroke(255);
-  frameRate(10);
+  //frameRate(10);
+  //noLoop();
 
   intervalo = width/10;
   inicio = intervalo/2;
@@ -25,31 +27,26 @@ void setup() {
     }
   }
 
-  
-  
+
   for (int a = inicio; a <= width; a += intervalo) {
     for (int b = inicio; b <= height; b += intervalo) {
-      pontosx.append(a);
-      pontosy.append(b);
+      pontosrec.add(new PVector(a, b));
     }
   }
 
-
-  pontosx.shuffle();
-  pontosy.shuffle();
-  //println(pontosx, pontosy);
-  //println(pontosx.size(), pontosy.size());
+  Collections.shuffle(pontosrec);
+  //println (pontosrec);
 }
-
 
 void draw() {
 
   if (frameCount > 1) {
 
-
-    line(pontosx.get(grad), pontosy.get(grad), pontosx.get(grad+1), pontosy.get(grad+1));
+    line(pontosrec.get(grad).x, pontosrec.get(grad).y, pontosrec.get(grad+1).x, pontosrec.get(grad+1).y);
     grad++;
+    
   }
+  
   saveFrame("saida/sketch_1_100_linhas-###.jpeg");
 
   if (grad == 99) {
