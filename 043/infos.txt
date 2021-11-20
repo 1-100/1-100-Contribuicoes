@@ -1,0 +1,4 @@
+Nome: Marlon Amorim Tenório
+Link: https://instagram.com/codingp5
+Descrição: O 1 gera um ponto. O 2 gera um segmento de reta. O 3 gera um triângulo. O 4, um quadrado… e assim até formar um polígono de 100 lados.
+Plataforma: p5.js
