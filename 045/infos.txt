@@ -1,0 +1,4 @@
+Nome: Gulherme Vieira
+Link: https://guilhermevieira.info
+Descrição: S100 símbolos do bloco de símbolos do Unicode, um para cada valor da contagem.
+Plataforma: Processing
