@@ -1,0 +1,4 @@
+Nome: Guilherme Vieira
+Link: https://guilhermevieira.info
+Descrição: Reproduz uma fotografia limitando o a quantidade de tons de acordo com o valor da contagem.
+Plataforma: Processing
