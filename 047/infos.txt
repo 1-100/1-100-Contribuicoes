@@ -1,0 +1,4 @@
+Nome: Guilherme Vieira
+Link: https://guilhermevieira.info
+Descrição: ria 100 símbolos únicos baseado no trabalho Diamond Theory de Steven Cullinane publicado na revista Computer Graphics and Art de 1977.
+Plataforma: p5.js
