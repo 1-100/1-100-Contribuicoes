@@ -1,0 +1,4 @@
+Nome: Guilherme Vieira
+Link: https://guilhermevieira.info
+Descrição: Procura na constante PI a primeira aparição de um dos valores de 1 a 100.
+Plataforma: Processing
