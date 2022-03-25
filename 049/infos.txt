@@ -1,0 +1,4 @@
+Nome: Jéssica Breda
+Link: https://jmrcg.hotglue.me
+Descrição: Círculos em crescente que geram cones a partir da divisão da largura do canvas e de parâmetros que alteram a contagem de frames. lágrimas graduais com parâmetro para cessar.
+Plataforma: p5.js
