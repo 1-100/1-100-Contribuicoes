@@ -1,0 +1,4 @@
+Nome: Guilherme Vieira
+Link: https://guilhermevieira.info
+Descrição: Um feixe de luz parte do centro da imagem e é refletido 100 vezes.
+Plataforma: Processing
