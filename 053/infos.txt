@@ -1,0 +1,4 @@
+Nome: Guilherme Vieira
+Link: https://guilhermevieira.info
+Descrição: A cada valor da contagem uma linha atravessando os extremos da imagem é adicionada.
+Plataforma: Nodebox 3
