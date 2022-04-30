@@ -1,0 +1,487 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="1000"
+   height="1000"
+   viewBox="0 0 1000 1000"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.2-beta (1b65182ce9, 2022-04-05)"
+   sodipodi:docname="modulos.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="px"
+     showgrid="true"
+     inkscape:zoom="0.18400524"
+     inkscape:cx="2119.5049"
+     inkscape:cy="-4467.2641"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1">
+    <inkscape:grid
+       type="xygrid"
+       id="grid9"
+       spacingx="50"
+       spacingy="50"
+       empspacing="1"
+       originx="1500"
+       originy="-250" />
+    <inkscape:page
+       x="0"
+       y="0"
+       width="1000"
+       height="1000"
+       id="page473"
+       inkscape:label="01-Linha-Tres" />
+    <inkscape:page
+       x="1100"
+       y="-2200"
+       width="1000"
+       height="1000"
+       id="page475"
+       inkscape:label="06-Linha-Dois-Esq" />
+    <inkscape:page
+       x="2200"
+       y="-2200"
+       width="1000"
+       height="1000"
+       id="page477"
+       inkscape:label="07-Linha-Dois-Dir" />
+    <inkscape:page
+       x="3250"
+       y="-4400"
+       width="1000"
+       height="1000"
+       id="page479"
+       inkscape:label="12-Linha-Um-Esq" />
+    <inkscape:page
+       x="4350"
+       y="-4400"
+       width="1000"
+       height="1000"
+       id="page531"
+       inkscape:label="13-Linha-Um-Dir" />
+    <inkscape:page
+       x="0"
+       y="-1100"
+       width="1000"
+       height="1000"
+       id="page703"
+       inkscape:label="02-Mescla-Tres-Um-Meio" />
+    <inkscape:page
+       x="1100"
+       y="-3300"
+       width="1000"
+       height="1000"
+       id="page705"
+       inkscape:label="08-Mescla-Dois-Esq-Um-Meio" />
+    <inkscape:page
+       x="2200"
+       y="-3300"
+       width="1000"
+       height="1000"
+       id="page707"
+       inkscape:label="09-Mescla-Dois-Dir-Um-Meio" />
+    <inkscape:page
+       x="3250"
+       y="-3300"
+       width="1000"
+       height="1000"
+       id="page709"
+       inkscape:label="10-Mescla-Dois-Esq-Um-Esq" />
+    <inkscape:page
+       x="4350"
+       y="-3300"
+       width="1000"
+       height="1000"
+       id="page711"
+       inkscape:label="11-Mescla-Dois-Dir-Um-Dir" />
+    <inkscape:page
+       x="0"
+       y="-2200"
+       width="1000"
+       height="1000"
+       id="page1221"
+       inkscape:label="05-Linha-Um-Meio" />
+    <inkscape:page
+       x="1100"
+       y="-1100"
+       width="1000"
+       height="1000"
+       id="page1330"
+       inkscape:label="03-Mescla-Tres-Dois-Esq" />
+    <inkscape:page
+       x="2200"
+       y="-1100"
+       width="1000"
+       height="1000"
+       id="page1395"
+       inkscape:label="04-Mescla-Tres-Dois-Dir" />
+    <inkscape:page
+       x="0"
+       y="-5500"
+       width="1000"
+       height="1000"
+       id="page354"
+       inkscape:label="14-Abre-Um-Meio-Três" />
+    <inkscape:page
+       x="1250"
+       y="-5500"
+       width="1000"
+       height="1000"
+       id="page452"
+       inkscape:label="15-Abre-Um-Esq-Três" />
+    <inkscape:page
+       x="2500"
+       y="-5500"
+       width="1000"
+       height="1000"
+       id="page454"
+       inkscape:label="16-Abre-Um-Dir-Três" />
+  </sodipodi:namedview>
+  <defs
+     id="defs2" />
+  <g
+     inkscape:label="Camada 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(1500,-250)">
+    <rect
+       style="fill:#000000;stroke-width:1.58114"
+       id="rect74"
+       width="200"
+       height="1000"
+       x="-1450"
+       y="250" />
+    <rect
+       style="fill:#000000;stroke-width:1.58114"
+       id="rect74-01"
+       width="200"
+       height="1000"
+       x="-750"
+       y="250" />
+    <rect
+       style="fill:#000000;stroke-width:1.58114"
+       id="rect74-2"
+       width="200"
+       height="1000"
+       x="-350"
+       y="-850" />
+    <rect
+       style="fill:#000000;stroke-width:1.58114"
+       id="rect74-2-7"
+       width="200"
+       height="1000"
+       x="-1100"
+       y="250" />
+    <rect
+       style="fill:#000000;stroke-width:1.11803"
+       id="rect74-0"
+       width="200"
+       height="500"
+       x="-1450"
+       y="-350" />
+    <rect
+       style="fill:#000000;stroke-width:1.11803"
+       id="rect74-2-2"
+       width="200"
+       height="500"
+       x="-750"
+       y="-350" />
+    <rect
+       style="fill:#000000;stroke-width:1.58113"
+       id="rect74-2-7-7"
+       width="200"
+       height="1000"
+       x="-1100"
+       y="-850" />
+    <rect
+       style="fill:#000000;stroke-width:1.58113"
+       id="rect74-2-7-7-86"
+       width="200"
+       height="1000"
+       x="-1100"
+       y="-1950" />
+    <rect
+       style="fill:#000000;stroke-width:1.58114"
+       id="rect74-4"
+       width="200"
+       height="1000"
+       x="-350"
+       y="-1950" />
+    <rect
+       style="fill:#000000;stroke-width:1.58114"
+       id="rect74-2-9"
+       width="200"
+       height="1000"
+       x="0"
+       y="-1950" />
+    <rect
+       style="fill:#000000;stroke-width:1.58114"
+       id="rect74-4-1"
+       width="200"
+       height="1000"
+       x="1100"
+       y="-1950" />
+    <rect
+       style="fill:#000000;stroke-width:1.58114"
+       id="rect74-4-1-2"
+       width="200"
+       height="1000"
+       x="1450"
+       y="-1950" />
+    <rect
+       style="fill:#000000;stroke-width:1.58114"
+       id="rect74-4-1-3"
+       width="200"
+       height="1000"
+       x="1800"
+       y="-4150" />
+    <rect
+       style="fill:#000000;stroke-width:1.58114"
+       id="rect74-4-1-3-5"
+       width="200"
+       height="1000"
+       x="3600"
+       y="-4150" />
+    <path
+       style="fill:#000000"
+       d="m -1250,-350 c 0,-100 150,-100 150,0 v -500 c 0,100 -350,250 -350,500 z"
+       id="path944"
+       sodipodi:nodetypes="ccccc" />
+    <rect
+       style="fill:#000000;stroke-width:1.11803"
+       id="rect74-0-3"
+       width="200"
+       height="500"
+       x="-350"
+       y="-2550" />
+    <rect
+       style="fill:#000000;stroke-width:1.58113"
+       id="rect74-2-7-7-8"
+       width="200"
+       height="1000"
+       x="0"
+       y="-3050" />
+    <path
+       style="fill:#000000"
+       d="m -150,-2550 c 0,-100 150,-100 150,0 v -500 c 0,100 -350,250 -350,500 z"
+       id="path944-6"
+       sodipodi:nodetypes="ccccc" />
+    <rect
+       style="fill:#000000;stroke-width:1.11803"
+       id="rect74-0-3-1"
+       width="200"
+       height="500"
+       x="-2350"
+       y="-2550"
+       transform="scale(-1,1)" />
+    <rect
+       style="fill:#000000;stroke-width:1.58113"
+       id="rect74-2-7-7-8-0"
+       width="200"
+       height="1000"
+       x="-2000"
+       y="-3050"
+       transform="scale(-1,1)" />
+    <path
+       style="fill:#000000"
+       d="m 2150,-2550 c 0,-100 -150,-100 -150,0 v -500 c 0,100 350,250 350,500 z"
+       id="path944-6-1"
+       sodipodi:nodetypes="ccccc" />
+    <rect
+       style="fill:#000000;stroke-width:1.11803"
+       id="rect74-0-3-1-1"
+       width="200"
+       height="500"
+       x="3250"
+       y="-2550" />
+    <rect
+       style="fill:#000000;stroke-width:1.58113"
+       id="rect74-2-7-7-8-0-0"
+       width="200"
+       height="1000"
+       x="3600"
+       y="-3050" />
+    <path
+       style="fill:#000000"
+       d="m 3450,-2550 c 0,-100 150,-100 150,0 v -500 c 0,100 -350,250 -350,500 z"
+       id="path944-6-1-7"
+       sodipodi:nodetypes="ccccc" />
+    <rect
+       style="fill:#000000;stroke-width:1.11803"
+       id="rect74-0-3-2"
+       width="200"
+       height="500"
+       x="-1650"
+       y="-2550"
+       transform="scale(-1,1)" />
+    <rect
+       style="fill:#000000;stroke-width:1.58113"
+       id="rect74-2-7-7-8-1"
+       width="200"
+       height="1000"
+       x="-1300"
+       y="-3050"
+       transform="scale(-1,1)" />
+    <path
+       style="fill:#000000"
+       d="m 1450,-2550 c 0,-100 -150,-100 -150,0 v -500 c 0,100 350,250 350,500 z"
+       id="path944-6-6"
+       sodipodi:nodetypes="ccccc" />
+    <path
+       style="fill:#000000"
+       d="m -750,-350 c 0,-100 -150,-100 -150,0 v -500 c 0,100 350,250 350,500 z"
+       id="path944-2"
+       sodipodi:nodetypes="ccccc" />
+    <rect
+       style="fill:#000000;stroke-width:1.11803"
+       id="rect74-0-7"
+       width="200"
+       height="500"
+       x="-1450"
+       y="4750"
+       transform="scale(1,-1)" />
+    <rect
+       style="fill:#000000;stroke-width:1.11803"
+       id="rect74-2-2-80"
+       width="200"
+       height="500"
+       x="-750"
+       y="4750"
+       transform="scale(1,-1)" />
+    <rect
+       style="fill:#000000;stroke-width:1.58113"
+       id="rect74-2-7-7-0"
+       width="200"
+       height="1000"
+       x="-1100"
+       y="4250"
+       transform="scale(1,-1)" />
+    <path
+       style="fill:#000000"
+       d="m -1250,-4750 c 0,100 150,100 150,0 v 500 c 0,-100 -350,-250 -350,-500 z"
+       id="path944-3"
+       sodipodi:nodetypes="ccccc" />
+    <path
+       style="fill:#000000"
+       d="m -750,-4750 c 0,100 -150,100 -150,0 v 500 c 0,-100 350,-250 350,-500 z"
+       id="path944-2-7"
+       sodipodi:nodetypes="ccccc" />
+    <rect
+       style="fill:#000000;stroke-width:1.11803"
+       id="rect74-2-2-8"
+       width="200"
+       height="500"
+       x="350"
+       y="-350" />
+    <rect
+       style="fill:#000000;stroke-width:1.58113"
+       id="rect74-2-7-7-9"
+       width="200"
+       height="1000"
+       x="0"
+       y="-850" />
+    <path
+       style="fill:#000000"
+       d="m 350,-350 c 0,-100 -150,-100 -150,0 v -500 c 0,100 350,250 350,500 z"
+       id="path944-2-6"
+       sodipodi:nodetypes="ccccc" />
+    <rect
+       style="fill:#000000;stroke-width:1.58114"
+       id="rect74-2-6"
+       width="200"
+       height="1000"
+       x="-1650"
+       y="-850"
+       transform="scale(-1,1)" />
+    <rect
+       style="fill:#000000;stroke-width:1.11803"
+       id="rect74-2-2-8-5"
+       width="200"
+       height="500"
+       x="-950"
+       y="-350"
+       transform="scale(-1,1)" />
+    <rect
+       style="fill:#000000;stroke-width:1.58113"
+       id="rect74-2-7-7-9-8"
+       width="200"
+       height="1000"
+       x="-1300"
+       y="-850"
+       transform="scale(-1,1)" />
+    <path
+       style="fill:#000000"
+       d="m 950,-350 c 0,-100 150,-100 150,0 v -500 c 0,100 -350,250 -350,500 z"
+       id="path944-2-6-7"
+       sodipodi:nodetypes="ccccc" />
+    <rect
+       style="fill:#000000;stroke-width:1.11803"
+       id="rect74-0-3-23"
+       width="200"
+       height="500"
+       x="-350"
+       y="4750"
+       transform="scale(-1)" />
+    <rect
+       style="fill:#000000;stroke-width:1.58113"
+       id="rect74-2-7-7-8-3"
+       width="200"
+       height="1000"
+       x="0"
+       y="4250"
+       transform="scale(-1)" />
+    <path
+       style="fill:#000000"
+       d="m 150,-4750 c 0,100 -150,100 -150,0 v 500 c 0,-100 350,-250 350,-500 z"
+       id="path944-6-17"
+       sodipodi:nodetypes="ccccc" />
+    <path
+       style="fill:#000000"
+       d="m 500,-5250 c 0,100 -150,100 -150,0 v 500 c 0,-100 350,-250 350,-500 z"
+       id="path944-6-17-1"
+       sodipodi:nodetypes="ccccc" />
+    <rect
+       style="fill:#000000;stroke-width:1.11803"
+       id="rect74-0-3-23-8"
+       width="200"
+       height="500"
+       x="1400"
+       y="4750"
+       transform="scale(1,-1)" />
+    <rect
+       style="fill:#000000;stroke-width:1.58113"
+       id="rect74-2-7-7-8-3-6"
+       width="200"
+       height="1000"
+       x="1750"
+       y="4250"
+       transform="scale(1,-1)" />
+    <path
+       style="fill:#000000"
+       d="m 1600,-4750 c 0,100 150,100 150,0 v 500 c 0,-100 -350,-250 -350,-500 z"
+       id="path944-6-17-5"
+       sodipodi:nodetypes="ccccc" />
+    <path
+       style="fill:#000000"
+       d="m 1250,-5250 c 0,100 150,100 150,0 v 500 c 0,-100 -350,-250 -350,-500 z"
+       id="path944-6-17-1-7"
+       sodipodi:nodetypes="ccccc" />
+  </g>
+</svg>

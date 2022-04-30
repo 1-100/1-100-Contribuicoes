@@ -1,0 +1,4 @@
+Nome: Guilherme Vieira
+Link: https://guilhermevieira.info
+Descrição: Em uma malha de 10 por 10 ocupa cada célula sequencialmente com um módulo aleatório, sendo que o módulo anterior define quais módulos podem ser utilizados na sequência.
+Plataforma: p5.js
