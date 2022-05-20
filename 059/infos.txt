@@ -1,0 +1,4 @@
+Nome: Guilherme Vieira
+Link: https://guilhermevieira.info
+Descrição: Gera a escrita por extenso de cada um dos números de 1 a 100 com a fonte Outward da Velvetyne Type.
+Plataforma: Processing
