@@ -1,0 +1,4 @@
+Nome: Lucas Gabriel Lima
+Link: https://github.com/LucasGabrielLima
+Descrição: Imprime 100 círculos com cores e posições aleatórias. Os círculos são formados por pontos, e a quantidade de pontos bem como o tamanho do círculos são determinados de forma inversamente proporcional à contagem a 100.
+Plataforma: Processing
