@@ -1,0 +1,4 @@
+Nome: Guilherme Vieira
+Link: https://guilhermevieira.info
+Descrição: Um qrcode para cada valor da contagem.
+Plataforma: Python
