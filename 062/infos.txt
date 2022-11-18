@@ -1,0 +1,4 @@
+Nome: Guilherme Vieira
+Link: https://guilhermevieira.info
+Descrição: A imagem é divida em quatro quadrantes espelhados na horizontal e vertical, para cada valor da contagem uma quantidade equivalente de triângulos é desenhada em cada quadrante.
+Plataforma: NodeBox 3
