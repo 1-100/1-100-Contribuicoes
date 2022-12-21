@@ -1,0 +1,4 @@
+Nome: Guilherme Vieira
+Link: https://guilhermevieira.info
+Descrição: Sintetiza um áudio para cada valor da contagem. A partir de cada áudio é gerado um gráfico da amplitude do áudio em relação ao tempo.
+Plataforma: Python
