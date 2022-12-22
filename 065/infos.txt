@@ -1,4 +1,4 @@
 Nome: Guilherme Vieira
 Link: https://guilhermevieira.info
-Descrição: Cria um sistema particulas com a quantidade de particulas igual ao valor da contagem. As particulas são classificadas em dois tipos distintos. Particulas do mesmo tipo se repelem e diferentes se atrem.
+Descrição: Cria um sistema partículas com a quantidade de partículas igual ao valor da contagem. As partículas são classificadas em dois tipos distintos. Partículas do mesmo tipo se repelem e diferentes se atraem.
 Plataforma: p5.js
