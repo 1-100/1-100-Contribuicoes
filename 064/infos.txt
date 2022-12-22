@@ -1,0 +1,4 @@
+Nome: Guilherme Vieira
+Link: https://guilhermevieira.info
+Descrição: Associa uma letra para cada número de 0 a 9 e realiza a contagem de 1 a 100 utilizando as letras no lugar dos números.
+Plataforma: Python
