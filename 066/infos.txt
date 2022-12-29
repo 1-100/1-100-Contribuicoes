@@ -1,4 +1,4 @@
 Nome: Guilherme Vieira
 Link: https://guilhermevieira.info
-Descrição: Conversão da contagem de 1 a 100 da base 10 para uma base 14. Cada carta do naipe de espada mais o coringa representam um símbolo da base 14.
+Descrição: Conversão da contagem de 1 a 100 da base 10 para uma base 14. Cada carta do naipe de paus mais o coringa representam um símbolo da base 14.
 Plataforma: p5.js
