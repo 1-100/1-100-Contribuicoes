@@ -1,0 +1,4 @@
+Nome: Guilherme Vieira
+Link: https://guilhermevieira.info
+Descrição: Cria uma escada de 100 degraus, um degrau para cada valor da contagem.
+Plataforma: Python
