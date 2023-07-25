@@ -1,0 +1,4 @@
+Nome: Gabriela Momberg, Guilherme Vieira
+Link: https://www.instagram.com/g.r.a.n.u.l.a.r, https://guilhermevieira.info
+Descrição: Atribui para cada caractere único do nome por extenso dos números de 1 a 100 um valor númerico. A partir desse mapa de caracteres e valores desenha um gráfico para cada valor da contagem.
+Plataforma: Nodebox 3

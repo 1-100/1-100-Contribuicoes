@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ndbx formatVersion="21" type="file" uuid="f4af5b0e-e967-4458-8a5c-3efecb24b84c">
+    <property name="canvasHeight" value="500"/>
+    <property name="canvasWidth" value="500"/>
+    <property name="canvasX" value="-250"/>
+    <property name="canvasY" value="250"/>
+    <link href="python:texto.py" rel="functions"/>
+    <link href="python:extenso.py" rel="functions"/>
+    <node name="root" prototype="core.network" renderedChild="combine2">
+        <node name="characters1" position="2.00,12.00" prototype="string.characters"/>
+        <node name="colorize1" position="1.00,23.00" prototype="corevector.colorize">
+            <port name="fill" type="color" value="#00000000"/>
+            <port name="strokeWidth" type="float" value="1.0"/>
+        </node>
+        <node name="colorize2" position="-1.00,30.00" prototype="corevector.colorize">
+            <port name="fill" type="color" value="#ffffffff"/>
+        </node>
+        <node name="combine1" position="4.00,25.00" prototype="list.combine"/>
+        <node name="combine2" position="3.00,31.00" prototype="list.combine"/>
+        <node name="connect1" position="2.00,19.00" prototype="corevector.connect">
+            <port name="closed" type="boolean" value="false"/>
+        </node>
+        <node name="count1" position="8.00,7.00" prototype="list.count"/>
+        <node name="count2" position="8.00,14.00" prototype="list.count"/>
+        <node name="distinct1" position="6.00,4.00" prototype="list.distinct"/>
+        <node name="divide1" position="12.00,7.00" prototype="math.divide">
+            <port name="value1" type="float" value="500.0"/>
+        </node>
+        <node name="ellipse1" position="7.00,23.00" prototype="corevector.ellipse">
+            <port name="width" type="float" value="20.0"/>
+            <port name="height" type="float" value="20.0"/>
+        </node>
+        <node name="first1" position="2.00,10.00" prototype="list.first"/>
+        <node name="frame1" position="3.00,5.00" prototype="core.frame"/>
+        <node name="group1" position="4.00,28.00" prototype="corevector.group"/>
+        <node name="import_text1" position="2.00,0.00" prototype="data.import_text">
+            <port name="file" type="string" value="contagem.txt"/>
+        </node>
+        <node name="integer1" position="12.00,4.00" prototype="math.integer"/>
+        <node name="length1" position="12.00,3.00" prototype="string.length"/>
+        <node name="lookup1" position="2.00,14.00" prototype="data.lookup"/>
+        <node name="make_point1" position="2.00,18.00" prototype="corevector.make_point"/>
+        <node name="make_strings1" position="6.00,3.00" prototype="string.make_strings">
+            <port name="string" type="string" value="abcdeêfghijklmnopqrstuvwxyz"/>
+            <port name="separator" type="string" value=""/>
+        </node>
+        <node name="max1" position="12.00,5.00" prototype="math.max"/>
+        <node name="multiply1" position="8.00,16.00" prototype="math.multiply"/>
+        <node name="range1" position="8.00,15.00" prototype="math.range"/>
+        <node name="rect1" position="1.00,22.00" prototype="corevector.rect">
+            <port name="position" type="point" value="250.00,-250.00"/>
+            <port name="width" type="float" value="500.0"/>
+            <port name="height" type="float" value="500.0"/>
+        </node>
+        <node name="rect2" position="-1.00,29.00" prototype="corevector.rect">
+            <port name="position" type="point" value="250.00,-250.00"/>
+            <port name="width" type="float" value="500.0"/>
+            <port name="height" type="float" value="500.0"/>
+        </node>
+        <node name="sample1" position="8.00,8.00" prototype="math.sample">
+            <port name="end" type="float" value="-500.0"/>
+        </node>
+        <node name="scale1" position="4.00,27.00" prototype="corevector.scale">
+            <port name="scale" type="point" value="80.00,80.00"/>
+        </node>
+        <node name="shift1" position="2.00,7.00" prototype="list.shift">
+            <port name="amount" type="int" value="53"/>
+        </node>
+        <node name="sort1" position="6.00,5.00" prototype="list.sort"/>
+        <node name="subtract1" position="12.00,6.00" prototype="math.subtract">
+            <port name="value2" type="float" value="1.0"/>
+        </node>
+        <node name="textpath1" position="10.00,20.00" prototype="corevector.textpath">
+            <port name="font_name" type="string" value="Space Mono"/>
+            <port name="position" type="point" value="0.00,-25.00"/>
+        </node>
+        <node name="translate1" position="7.00,21.00" prototype="corevector.translate"/>
+        <node name="translate2" position="4.00,29.00" prototype="corevector.translate">
+            <port name="translate" type="point" value="50.00,-50.00"/>
+        </node>
+        <node name="zip_map1" position="6.00,10.00" prototype="list.zip_map"/>
+        <conn input="make_strings1.string" output="import_text1"/>
+        <conn input="distinct1.list" output="make_strings1"/>
+        <conn input="sort1.list" output="distinct1"/>
+        <conn input="count1.list" output="sort1"/>
+        <conn input="sample1.amount" output="count1"/>
+        <conn input="zip_map1.keys" output="sort1"/>
+        <conn input="zip_map1.values" output="sample1"/>
+        <conn input="characters1.string" output="first1"/>
+        <conn input="lookup1.list" output="zip_map1"/>
+        <conn input="lookup1.key" output="characters1"/>
+        <conn input="length1.string" output="import_text1"/>
+        <conn input="integer1.value" output="length1"/>
+        <conn input="max1.values" output="integer1"/>
+        <conn input="shift1.list" output="import_text1"/>
+        <conn input="first1.list" output="shift1"/>
+        <conn input="make_point1.y" output="lookup1"/>
+        <conn input="count2.list" output="characters1"/>
+        <conn input="range1.end" output="count2"/>
+        <conn input="multiply1.value1" output="range1"/>
+        <conn input="multiply1.value2" output="divide1"/>
+        <conn input="make_point1.x" output="multiply1"/>
+        <conn input="connect1.points" output="make_point1"/>
+        <conn input="subtract1.value1" output="max1"/>
+        <conn input="divide1.value2" output="subtract1"/>
+        <conn input="textpath1.text" output="characters1"/>
+        <conn input="translate1.shape" output="textpath1"/>
+        <conn input="translate1.translate" output="make_point1"/>
+        <conn input="shift1.amount" output="frame1"/>
+        <conn input="combine1.list6" output="connect1"/>
+        <conn input="colorize1.shape" output="rect1"/>
+        <conn input="combine1.list1" output="colorize1"/>
+        <conn input="scale1.shape" output="combine1"/>
+        <conn input="group1.shapes" output="scale1"/>
+        <conn input="ellipse1.position" output="make_point1"/>
+        <conn input="combine1.list2" output="ellipse1"/>
+        <conn input="translate2.shape" output="group1"/>
+        <conn input="colorize2.shape" output="rect2"/>
+        <conn input="combine2.list1" output="colorize2"/>
+        <conn input="combine2.list2" output="translate2"/>
+    </node>
+</ndbx>
