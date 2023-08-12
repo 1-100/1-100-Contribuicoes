@@ -1,0 +1,4 @@
+Nome: Guilherme Vieira
+Link: https://guilhermevieira.info
+Descrição: Calcula 100 linhas do Triangulo de Pascal.
+Plataforma: p5.js
