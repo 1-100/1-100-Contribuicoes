@@ -1,0 +1,4 @@
+Nome: Guilherme Vieira
+Link: https://guilhermevieira.info
+Descrição: Para cada número da contagem executa um algorítimo de reação difusão. Cada número tem uma quantidade inicial de pontos reagentes equivalmente ao valor da contagem.
+Plataforma: Processing
