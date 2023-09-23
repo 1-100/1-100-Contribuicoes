@@ -1,0 +1,4 @@
+Autoria: João Generoso
+Link: https://joaogeneroso.com
+Descrição: Faz o cruzamento entre duas linhas a cada valor da contagem.
+Plataforma: p5.js
