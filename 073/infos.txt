@@ -1,0 +1,4 @@
+Autoria: João Generoso
+Link: https://joaogeneroso.com
+Descrição: Adiciona um número correspondente à contagem, enquanto os anteriores gradualmente desaparecem em uma espiral descendente.
+Plataforma: Blender/ Geometry Nodes
