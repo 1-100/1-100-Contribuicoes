@@ -1,0 +1,4 @@
+Autoria: João Generoso
+Link: https://joaogeneroso.com
+Descrição: Uma vela que derrete conforme a contagem avança, desaparecendo completamente ao chegar no número 100.
+Plataforma: Blender/ Geometry Nodes
