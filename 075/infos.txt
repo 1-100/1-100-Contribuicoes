@@ -1,0 +1,3 @@
+Nome: Wandeson Ricardo (WSRicardo)
+Link: https://github.com/wsricardo
+Descrição: Desenhando fractal do conjunto mandelbrot para reticulado [0, 0.5]x[0, 0.5], onde pra cada i interações de 1 até 100 são computados pontos (x,y) para os quais x²+y² < 2² pintados de preto. Imagens criada com módulo próprio PYIMM.
