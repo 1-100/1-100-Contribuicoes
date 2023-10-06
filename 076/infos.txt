@@ -1,4 +1,4 @@
 Nome: Guilherme Vieira
 Link: https://guilhermevieira.info
-Descrição: Desenha uma série de padrões a partir de valores obtidos da função “(x, y) = ((x ^ y)) / i”, onde m, varia de 1 a 100.
+Descrição: Desenha uma série de padrões a partir de valores obtidos da função “(x, y) = ((x ^ y)) / i”, onde i, varia de 1 a 100.
 Plataforma: Processing
