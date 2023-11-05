@@ -1,0 +1,4 @@
+Nome: Guilherme Vieira
+Link: https://guilhermevieira.info
+Descrição: Cria uma linha em um espaço 3D. Para cada valor da contagem acrescenta um segmento na linha.
+Plataforma: Geometry Nodes
