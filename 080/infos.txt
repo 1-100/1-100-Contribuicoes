@@ -1,0 +1,4 @@
+Nome: Guilherme Vieira
+Link: https://guilhermevieira.info
+Descrição: Para cada valor contagem apresenta uma série de barras relativa a esse valor. Cada uma das barras tem a sua altura baseada no quadrado do valor da sua ordem.
+Plataforma: Python

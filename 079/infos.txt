@@ -1,0 +1,4 @@
+Nome: Guilherme Vieira
+Link: https://guilhermevieira.info
+Descrição: Gera uma lista dos 100 albuns mais ouvidos no nos últimos 365 dias de um usuário do Last.fm.
+Plataforma: Python
