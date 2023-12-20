@@ -1,4 +1,4 @@
 Nome: Guilherme Vieira
 Link: https://guilhermevieira.info
-Descrição: Cria uma série de ondas para cada valor da contagem. As ondas de cada contagem é resultado da soma dos parametros das ondas anterior da contagem anterior com novos parâmetros.
+Descrição: Cria uma série de ondas para cada valor da contagem. As ondas de cada contagem é resultado da soma dos parametros das ondas da contagem anterior com novos parâmetros.
 Plataforma: p5.js
