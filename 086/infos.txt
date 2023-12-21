@@ -1,0 +1,4 @@
+Nome: Guilherme Vieira
+Link: https://guilhermevieira.info
+Descrição: Para cada valor da contagem uma visualização do vento na cidade de Salvador, Bahia, nos 100 primeiros dias do ano de 2023. Cada ponto indica um horário do dia e de cada um saem duas linhas na direção do vento naquele horário, a mais grossa representa a velocidade média e a mais fina a velocidade da rajada mais forte.
+Plataforma: NodeBox 3
