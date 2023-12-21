@@ -1,0 +1,4 @@
+Nome: Guilherme Vieira
+Link: https://guilhermevieira.info
+Descrição: Fatia uma imagem em 100 pedaços. A cada valor da contagem desloca um pouco cada uma das fatias.
+Plataforma: p5.js
