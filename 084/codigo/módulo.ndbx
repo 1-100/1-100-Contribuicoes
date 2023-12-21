@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ndbx formatVersion="21" type="file" uuid="40386770-c7d7-49d1-b16a-2f4314c1b68b">
+    <property name="canvasHeight" value="500"/>
+    <property name="canvasWidth" value="500"/>
+    <property name="canvasX" value="0"/>
+    <property name="canvasY" value="0"/>
+    <node name="root" prototype="core.network" renderedChild="colorize1">
+        <node name="add1" position="8.00,5.00" prototype="math.add">
+            <port name="value2" type="float" value="1.0"/>
+        </node>
+        <node name="color1" position="6.00,10.00" prototype="color.color"/>
+        <node name="color2" position="7.00,11.00" prototype="color.color">
+            <port name="color" type="color" value="#ffffffff"/>
+        </node>
+        <node name="colorize1" position="4.00,15.00" prototype="corevector.colorize"/>
+        <node name="compare1" position="8.00,9.00" prototype="math.compare">
+            <port name="comparator" type="string" value="=="/>
+        </node>
+        <node name="count1" position="8.00,4.00" prototype="list.count"/>
+        <node name="frame1" position="10.00,7.00" prototype="core.frame"/>
+        <node name="grid1" position="4.00,3.00" prototype="corevector.grid">
+            <port name="columns" type="int" value="50"/>
+            <port name="rows" type="int" value="50"/>
+            <port name="width" type="float" value="490.0"/>
+            <port name="height" type="float" value="490.0"/>
+        </node>
+        <node name="mod1" position="8.00,8.00" prototype="math.mod">
+            <port name="value2" type="float" value="25.0"/>
+        </node>
+        <node name="range1" position="8.00,6.00" prototype="math.range">
+            <port name="start" type="float" value="1.0"/>
+        </node>
+        <node name="rect1" position="4.00,13.00" prototype="corevector.rect">
+            <port name="width" type="float" value="10.0"/>
+            <port name="height" type="float" value="10.0"/>
+        </node>
+        <node name="switch1" position="6.00,12.00" prototype="list.switch"/>
+        <conn input="rect1.position" output="grid1"/>
+        <conn input="count1.list" output="grid1"/>
+        <conn input="mod1.value1" output="range1"/>
+        <conn input="compare1.value1" output="mod1"/>
+        <conn input="switch1.index" output="compare1"/>
+        <conn input="colorize1.shape" output="rect1"/>
+        <conn input="colorize1.fill" output="switch1"/>
+        <conn input="switch1.input1" output="color1"/>
+        <conn input="switch1.input2" output="color2"/>
+        <conn input="add1.value1" output="count1"/>
+        <conn input="range1.end" output="add1"/>
+        <conn input="mod1.value2" output="frame1"/>
+    </node>
+</ndbx>
