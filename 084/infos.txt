@@ -1,0 +1,4 @@
+Nome: Guilherme Vieira
+Link: https://guilhermevieira.info
+Descrição: Cria uma grade de 50 x 50 quadrados. A cada valor da contagem somente os quadrados que tiverem um posicionamento múltiplo ao valor da contagem são pintados de branco.
+Plataforma: NodeBox 3
