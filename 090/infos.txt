@@ -1,0 +1,4 @@
+Nome: Guilherme Vieira
+Link: https://guilhermevieira.info
+Descrição: Cria uma grade e a cada valor da contagem escolhe uma celula aleatória da grade e analisa a cor das células vizinhas. Se a cor for preto muda para branco e se for branco muda para preto.
+Plataforma: p5.js

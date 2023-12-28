@@ -1,0 +1,4 @@
+Nome: Guilherme Vieira
+Link: https://guilhermevieira.info
+Descrição: Um traço para cada valor da contagem agrupados em grupos de 4 traços, onde o quarto traço é feito na diagonal fechando aquele grupo.
+Plataforma: p5.js
