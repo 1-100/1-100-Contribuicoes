@@ -1,0 +1,4 @@
+Nome: Guilherme Vieira
+Link: https://guilhermevieira.info
+Descrição: Cria um efeito de caleidoscópio, a quantidade de imagens espelhadas é proporcional ao valor da contagem.
+Plataforma: p5.js

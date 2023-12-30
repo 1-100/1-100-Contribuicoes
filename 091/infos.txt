@@ -1,0 +1,4 @@
+Nome: Guilherme Vieira
+Link: https://guilhermevieira.info
+Descrição: No primeiro valor da contagem desenha alguma dessas possibilidades: quadrado, xis ou cruz. A cada novo valor da contagem escolhe quatro pontos mais distantes do centro a partir dos elementos desenhados anteriormente. Desenha nesses 4 pontos novos elementos. Caso o desenho se aproxime da borda, retorna ao centro. A cada valor o traço também fica mais espesso.
+Plataforma: p5.js
