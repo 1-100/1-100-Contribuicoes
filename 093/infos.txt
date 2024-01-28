@@ -1,0 +1,4 @@
+Nome: Guilherme Vieira
+Link: https://guilhermevieira.info
+Descrição: Cria dois conjuntos de linhas que vão de um centro comum para a extremidade. A cada valor da contagem cada um desses conjuntos de linhas se desloca para uma das extremidades da imagem. O deslocamento gera uma série de padrões moaré na imagem.
+Plataforma: Processing-Python
