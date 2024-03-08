@@ -1,0 +1,4 @@
+Nome: Guilherme Vieira
+Link: https://guilhermevieira.info
+Descrição: Analisa a primeira parte do codigo das linhas de ônibus de São Paulo, onde os 2 últimos digitos dessa parte do código devem ser equivalente ao valor da contagem, ignorando-se letras. As linhas diurnas possuem fundo branco e as noturnas preto.
+Plataforma: Nodebox 3
