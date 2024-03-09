@@ -1,0 +1,4 @@
+Nome: Guilherme Vieira
+Link: https://guilhermevieira.info
+Descrição: Para cada valor da contagem realiza uma busca por imagens no Duck Duck Go e retorna o primeiro resultado. Várias buscas foram realizadas utilizando parâmetros diferentes e as imagens finais são uma curadoria manual dos diferentes resultados.
+Plataforma: Python
