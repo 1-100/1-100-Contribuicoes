@@ -1,0 +1,4 @@
+Nome: Guilherme Vieira
+Link: https://guilhermevieira.info
+Descrição: Cria aleatoriamente uma operação aritmética em que o resultado é igual ao valor da contagem.
+Plataforma: p5.js

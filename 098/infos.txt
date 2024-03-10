@@ -1,0 +1,4 @@
+Nome: Guilherme Vieira
+Link: https://guilhermevieira.info
+Descrição: Inspirado no relógio analógico cria uma contagem onde o ponteiro menor indica as dezenas e o maior as unidades.
+Plataforma: NodeBox 3

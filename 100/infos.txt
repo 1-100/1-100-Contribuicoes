@@ -1,0 +1,4 @@
+Nome: Guilherme Vieira
+Link: https://guilhermevieira.info
+Descrição: Em um primeiro cógido pega uma imagem aleatoria de cada uma das contagens de 1 a 99 e atribui um valor de brilho para imagem, quanto mais pixels claros mais brilho a imagem tem. Em um segundo utiliza as informações do primeiro para reticular com as imagens da contagem um vídeo de uma pessoa batendo palmas. Esta contagem é também um agradecimento a todos que participaram desse projeto.
+Plataforma: Processing, Python
